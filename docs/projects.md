@@ -1,125 +1,33 @@
-# Проекты Вячеслава Пискорского
+# docs/projects.md - Mission Log & System Projects
 
-## Strategic Intelligence AI
+_Technical details and operational outcomes of core developments._
 
-**Описание:** Автономная система анализа документов, OSINT-автоматизации и стратегического планирования на базе ИИ.
+## [PRJ-001: Strategic Intelligence AI]
+- **Type:** Strategic Decision Support / RAG System.
+- **Goal:** Processing massive volumes of unstructured tactical data into actionable intelligence.
+- **Tech:** Python, FastAPI, Qdrant (Vector DB), Local LLMs.
+- **Impact:** Automated identification of strategic patterns from over 10k+ daily intelligence reports. Zero-internet deployment for secure environments.
 
-**Технологии:** Python, FastAPI, Qdrant, LangChain, AutoGen, Gemini, PostgreSQL, Docker
+## [PRJ-002: GSM Security Research / GSM Fake Points]
+- **Type:** SDR-based Signals Intelligence.
+- **Goal:** Analysis of GSM-infrastructure vulnerabilities and downlink monitoring.
+- **Tech:** SDR (BladeRF/HackRF), OsmocomBB, Python Scapy.
+- **Impact:** Demonstrated vulnerability of standard GSM protocols to IMSI-catchers. Developed defensive protocols for communication security (COMSEC).
 
-**Особенности:**
-- Multi-agent orchestration
-- Document processing pipeline (OCR, extraction, chunking)
-- OSINT automation (web scraping, social media, dark web)
-- RAG с семантическим поиском
+## [PRJ-003: Tactical Mesh Solutions]
+- **Type:** Resilient Decentralized Communications.
+- **Goal:** Creating a non-jammable, off-grid communication network for small tactical units.
+- **Tech:** LoRa/Meshtastic, ESP32, Custom antenna arrays.
+- **Impact:** Successful deployment of a 10km+ range mesh network in heavy EW (REB) environments. Low-power, low-signature, end-to-end encrypted.
 
-**Ссылка:** https://github.com/Redrock453/strategic-intelligence-ai
+## [PRJ-004: AutoRecon Framework]
+- **Type:** Automated OSINT & Recon.
+- **Goal:** Real-time automated reconnaissance and digital footprint analysis.
+- **Tech:** Python, Selenium (Undetected), Proxy-chains.
+- **Impact:** Reduced data gathering time from 12 hours to 15 minutes for localized target profiling. 
 
----
-
-## AutoRecon
-
-**Описание:** Инструмент автоматизированного сбора данных и цифровой разведки.
-
-**Технологии:** Python, Nmap, Automation
-
-**Особенности:**
-- Сканирование портов
-- Анализ уязвимостей
-- Автоматическая отчётность
-
-**Ссылка:** https://github.com/Redrock453/AutoRecon
-
----
-
-## GSM Fake Points Guide
-
-**Описание:** Исследование безопасности GSM-инфраструктуры. Работа с базовыми станциями через SDR.
-
-**Технологии:** Python, SDR, OsmocomBB, OpenBTS, GNU Radio, BladeRF, HackRF
-
-**Особенности:**
-- Анализ протоколов GSM (L1/L2/L3)
-- Работа с SDR-оборудованием
-- Исследование Rogue BTS
-- Blue Team defense
-
-**Ссылка:** https://github.com/Redrock453/gsm-fake-points-guide
-
----
-
-## agenticSeek
-
-**Описание:** Полностью локальная альтернатива Manus AI. Автономный браузинг, написание кода, планирование задач.
-
-**Технологии:** Python, Selenium, Ollama, Docker, Redis, SearxNG
-
-**Особенности:**
-- 100% локальное исполнение
-- Автономный веб-браузинг
-- Написание и выполнение кода
-- Voice-enabled (experimental)
-
-**Ссылка:** https://github.com/Redrock453/agenticSeek
-
----
-
-## TacticalMesh
-
-**Описание:** Децентрализованная тактическая mesh-сеть для военных и гуманитарных применений на базе LoRa.
-
-**Технологии:** C++, LoRa, Mesh, Meshtastic
-
-**Особенности:**
-- Децентрализованная связь
-- Дальность до 10км
-- AES-256 шифрование
-- Self-healing сеть
-
-**Ссылка:** https://github.com/Redrock453/TacticalMesh
-
----
-
-## MindFlowAI
-
-**Описание:** Система управления интеллектуальными потоками данных. "Второй мозг" с интеграцией Google Gemini.
-
-**Технологии:** TypeScript, Gemini, PKM
-
-**Особенности:**
-- Автоматическая структура заметок
-- Умные шаблоны
-- Управление знаниями с ИИ
-
-**Ссылка:** https://github.com/Redrock453/MindFlowAI
-
----
-
-## CARRIE AI Agent Ecosystem
-
-**Описание:** Complete Security Agent Ecosystem интегрированный с Claude Code. 12+ инструментов безопасности.
-
-**Технологии:** Python, Shell, Claude Code, MCP
-
-**Особенности:**
-- TikTok Analyzer
-- Network Scanner
-- Z.AI Search
-- Educational Pentest Framework
-
-**Ссылка:** https://github.com/Redrock453/carrie-ai-agent-ecosystem
-
----
-
-## Metasploit MCP Server
-
-**Описание:** MCP сервер для интеграции Metasploit Framework с Claude AI.
-
-**Технологии:** Python, Metasploit, MCP
-
-**Особенности:**
-- Поиск модулей
-- Управление сессиями
-- Создание handlers
-- White-list команд
-
-**Ссылка:** https://github.com/Redrock453/metasploit-mcp-server
+## [PRJ-005: BAS-SUPERGROK]
+- **Type:** Multi-Agent Tactical Orchestrator.
+- **Goal:** Coordination of specialized AI agents for real-time mission support.
+- **Tech:** TypeScript, Mastra, Discord/Telegram Integrations.
+- **Impact:** Unified interface for SIGINT, OSINT, and GEOINT data streams.

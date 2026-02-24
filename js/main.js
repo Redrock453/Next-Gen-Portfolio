@@ -1,42 +1,48 @@
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+document.addEventListener('DOMContentLoaded', () => {
+    // Typing Effect Logic
+    const typingElements = document.querySelectorAll('.typing-text');
+    
+    typingElements.forEach(element => {
+        const text = element.getAttribute('data-text');
+        let index = 0;
+        
+        function type() {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 50);
+            }
         }
+        
+        type();
     });
-});
 
-// Header background on scroll
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(18, 20, 24, 0.98)';
-    } else {
-        header.style.background = 'rgba(18, 20, 24, 0.95)';
-    }
-});
+    // Smooth scroll markers
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const marker = item.querySelector('.nav-marker');
+            if (marker) {
+                marker.style.opacity = '1';
+                setTimeout(() => {
+                    if (!item.matches(':hover')) {
+                        marker.style.opacity = '0';
+                    }
+                }, 1000);
+            }
+        });
+    });
 
-// Terminal typing effect
-const terminalLines = document.querySelectorAll('.typing-text');
-terminalLines.forEach(line => {
-    const text = line.getAttribute('data-text');
-    line.textContent = '';
-    let i = 0;
-    
-    function type() {
-        if (i < text.length) {
-            line.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 30);
+    // Random status changes to simulate live system
+    const statusText = document.querySelector('.status-text');
+    setInterval(() => {
+        const states = ['ONLINE', 'ENCRYPTED', 'SYNCING', 'SCANNING'];
+        if (Math.random() > 0.8) {
+            const original = statusText.textContent;
+            statusText.textContent = states[Math.floor(Math.random() * states.length)];
+            setTimeout(() => {
+                statusText.textContent = original;
+            }, 1000);
         }
-    }
-    
-    setTimeout(type, 500);
+    }, 5000);
 });
-
-// Console
-console.log('%c⚡ UNIT: BAS // TACTICAL OPERATIONS', 'font-size: 16px; color: #FF9F1C; font-weight: bold;');
-console.log('%c// READY FOR DEPLOYMENT', 'color: #4F6D55;');

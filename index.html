@@ -11,13 +11,9 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
-    <!-- Scanlines Overlay -->
     <div class="scanlines"></div>
-    
-    <!-- Hex Grid Background -->
     <div class="hex-grid"></div>
 
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -40,7 +36,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="terminal-output">
@@ -58,9 +53,7 @@
                         <span class="stat-id">[DATA-001]</span>
                     </div>
                     <div class="stat-value">70+</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 85%"></div>
-                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-header">
@@ -68,9 +61,7 @@
                         <span class="stat-id">[DATA-002]</span>
                     </div>
                     <div class="stat-value">5+</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 70%"></div>
-                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 70%"></div></div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-header">
@@ -78,9 +69,7 @@
                         <span class="stat-id">[DATA-003]</span>
                     </div>
                     <div class="stat-value">2025</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: 60%"></div>
-                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 60%"></div></div>
                 </div>
             </div>
         </div>
@@ -90,794 +79,96 @@
                 <div class="globe-ring ring-1"></div>
                 <div class="globe-ring ring-2"></div>
                 <div class="globe-ring ring-3"></div>
-                <div class="globe-dot dot-1"></div>
-                <div class="globe-dot dot-2"></div>
-                <div class="globe-dot dot-3"></div>
-                <div class="globe-dot dot-4"></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-id">[INTEL-001]</span>
                 <h2 class="section-title">OPERATOR BRIEFING</h2>
             </div>
-            <div class="about-grid">
-                <div class="briefing-box">
-                    <div class="briefing-header">
-                        <span class="briefing-id">>> MISSION_PROFILE</span>
-                    </div>
-                    <p class="briefing-text">Инженер-разработчик на стыке софта, железа и разведки данных.</p>
-                    <p class="briefing-text">Специализируюсь на Python-автоматизации, архитектуре Mesh-сетей и интеграции ИИ в процессы принятия решений. Мой фокус — создание устойчивых систем связи и инструментов анализа информации, которые работают там, где стандартные решения отказывают.</p>
-                    <div class="briefing-tags">
-                        <span class="tag">[PYTHON]</span>
-                        <span class="tag">[AI/ML]</span>
-                        <span class="tag">[SECURITY]</span>
-                        <span class="tag">[SDR]</span>
-                        <span class="tag">[DEVOPS]</span>
-                        <span class="tag">[MESH]</span>
-                    </div>
+            <div class="briefing-box">
+                <div class="briefing-header">>> MISSION_PROFILE</div>
+                <p class="briefing-text">Инженер-разработчик на стыке софта, железа и разведки данных. Специализируюсь на Python-автоматизации, архитектуре Mesh-сетей и интеграции ИИ в процессы принятия решений.</p>
+                <div class="briefing-tags">
+                    <span class="tag">[PYTHON]</span> <span class="tag">[AI/ML]</span> <span class="tag">[SECURITY]</span> <span class="tag">[SDR]</span> <span class="tag">[DEVOPS]</span> <span class="tag">[MESH]</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-id">[OBJECTIVES-001]</span>
-                <h2 class="section-title">TACTICAL OBJECTIVES</h2>
+                <h2 class="section-title">MISSION LOG</h2>
             </div>
             <div class="projects-grid">
-                <!-- Project 1 -->
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-001]</span>
-                        <h3 class="project-title">STRATEGIC INTELLIGENCE AI</h3>
-                    </div>
-                    <p class="project-desc">Автономная система анализа документов, OSINT-автоматизации и стратегического планирования на базе ИИ.</p>
-                    <div class="project-tech">
-                        <span>PYTHON</span>
-                        <span>FASTAPI</span>
-                        <span>QDRANT</span>
-                        <span>LANGCHAIN</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
+                    <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">STRATEGIC INTEL AI</h3></div>
+                    <p class="project-desc">Система анализа тактических данных и OSINT на базе RAG.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>QDRANT</span></div>
+                    <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
-
-                <!-- Project 2 -->
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-002]</span>
-                        <h3 class="project-title">AUTORECON</h3>
-                    </div>
-                    <p class="project-desc">Инструмент автоматизированного сбора данных и цифровой разведки.</p>
-                    <div class="project-tech">
-                        <span>PYTHON</span>
-                        <span>NMAP</span>
-                        <span>AUTOMATION</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/AutoRecon" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
+                    <div class="project-header"><span class="project-id">[OBJ-002]</span><h3 class="project-title">AUTORECON</h3></div>
+                    <p class="project-desc">Автоматизированная разведка и сбор данных.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>NMAP</span><span>BASH</span></div>
+                    <a href="https://github.com/Redrock453/AutoRecon" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
-
-                <!-- Project 3 -->
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-003]</span>
-                        <h3 class="project-title">GSM SECURITY RESEARCH</h3>
-                    </div>
-                    <p class="project-desc">Исследование безопасности GSM-инфраструктуры. Работа с базовыми станциями через SDR.</p>
-                    <div class="project-tech">
-                        <span>PYTHON</span>
-                        <span>SDR</span>
-                        <span>OSMOCOM</span>
-                        <span>GNU RADIO</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
+                    <div class="project-header"><span class="project-id">[OBJ-003]</span><h3 class="project-title">GSM SECURITY</h3></div>
+                    <p class="project-desc">Исследование уязвимостей GSM через SDR.</p>
+                    <div class="project-tech"><span>SDR</span><span>PYTHON</span><span>OSMOCOM</span></div>
+                    <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
-
-                <!-- Project 4 -->
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-004]</span>
-                        <h3 class="project-title">AGENTICSEEK</h3>
-                    </div>
-                    <p class="project-desc">Полностью локальная альтернатива Manus AI. Автономный браузинг и написание кода.</p>
-                    <div class="project-tech">
-                        <span>PYTHON</span>
-                        <span>SELENIUM</span>
-                        <span>OLLAMA</span>
-                        <span>DOCKER</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/agenticSeek" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-005]</span>
-                        <h3 class="project-title">TACTICALMESH</h3>
-                    </div>
-                    <p class="project-desc">Децентрализованная тактическая mesh-сеть на базе LoRa.</p>
-                    <div class="project-tech">
-                        <span>C++</span>
-                        <span>LORA</span>
-                        <span>MESH</span>
-                        <span>MAST</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/TacticalMesh" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
-                </article>
-
-                <!-- Project 6 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <span class="project-id">[OBJ-006]</span>
-                        <h3 class="project-title">CARRIE AI ECOSYSTEM</h3>
-                    </div>
-                    <p class="project-desc">Security Agent Ecosystem с Claude Code. 12+ инструментов безопасности.</p>
-                    <div class="project-tech">
-                        <span>PYTHON</span>
-                        <span>CLAUDE</span>
-                        <span>MCP</span>
-                        <span>PENTEST</span>
-                    </div>
-                    <a href="https://github.com/Redrock453/carrie-ai-agent-ecosystem" target="_blank" class="project-link">
-                        <span>> ACCESS_REPO</span>
-                    </a>
+                    <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">TACTICAL MESH</h3></div>
+                    <p class="project-desc">Децентрализованная LoRa-сеть для работы в условиях РЭБ.</p>
+                    <div class="project-tech"><span>C++</span><span>LORA</span><span>MESH</span></div>
+                    <a href="https://github.com/Redrock453/TacticalMesh" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Stack Section -->
-    <section id="stack" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-id">[ARSENAL-001]</span>
-                <h2 class="section-title">SYSTEMS CHECK</h2>
-            </div>
-            <div class="stack-grid">
-                <div class="stack-module">
-                    <div class="module-header">
-                        <span class="module-id">[MOD-001]</span>
-                        <h3>LANGUAGES</h3>
-                    </div>
-                    <div class="module-items">
-                        <div class="module-item">
-                            <span class="item-name">PYTHON</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">SHELL</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">C++</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">TYPESCRIPT</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stack-module">
-                    <div class="module-header">
-                        <span class="module-id">[MOD-002]</span>
-                        <h3>AI & ML</h3>
-                    </div>
-                    <div class="module-items">
-                        <div class="module-item">
-                            <span class="item-name">RAG SYSTEMS</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">LANGCHAIN</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">AUTOGEN</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">QDRANT</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stack-module">
-                    <div class="module-header">
-                        <span class="module-id">[MOD-003]</span>
-                        <h3>INFRASTRUCTURE</h3>
-                    </div>
-                    <div class="module-items">
-                        <div class="module-item">
-                            <span class="item-name">DOCKER</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">GITHUB ACTIONS</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">POSTGRESQL</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">LINUX</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stack-module">
-                    <div class="module-header">
-                        <span class="module-id">[MOD-004]</span>
-                        <h3>SECURITY & RF</h3>
-                    </div>
-                    <div class="module-items">
-                        <div class="module-item">
-                            <span class="item-name">SDR</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">METASPLOIT</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">GSM SECURITY</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                        <div class="module-item">
-                            <span class="item-name">PENTEST</span>
-                            <div class="item-bars"><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-id">[COMMS-001]</span>
-                <h2 class="section-title">ESTABLISH SECURE COMMS</h2>
+                <h2 class="section-title">SECURE COMMS</h2>
             </div>
             <div class="contact-grid">
                 <div class="comms-box">
-                    <div class="comms-header">
-                        <span class="comms-id">>> CHANNELS</span>
-                    </div>
+                    <div class="comms-header">>> CHANNELS</div>
                     <div class="comms-list">
                         <a href="https://t.me/redrock453" target="_blank" class="comm-item">
-                            <span class="comm-id">[CH-001]</span>
-                            <span class="comm-name">TELEGRAM</span>
-                            <span class="comm-status">@redrock453</span>
+                            <span class="comm-id">[CH-001]</span><span class="comm-name">TELEGRAM</span><span class="comm-status">@redrock453</span>
                         </a>
                         <a href="https://github.com/Redrock453" target="_blank" class="comm-item">
-                            <span class="comm-id">[CH-002]</span>
-                            <span class="comm-name">GITHUB</span>
-                            <span class="comm-status">/Redrock453</span>
+                            <span class="comm-id">[CH-002]</span><span class="comm-name">GITHUB</span><span class="comm-status">/Redrock453</span>
                         </a>
                     </div>
                 </div>
                 <div class="action-box">
-                    <p class="action-text">ОПЕРАТОР ГОТОВ К ВЫПОЛНЕНИЮ МИССИИ</p>
-                    <a href="https://t.me/redrock453" target="_blank" class="action-btn">
-                        <span>> INITIATE UPLINK (TELEGRAM)</span>
-                    </a>
+                    <a href="https://t.me/redrock453" target="_blank" class="action-btn">> INITIATE UPLINK</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-status">
-                <span>TERMINAL SESSION ACTIVE</span>
-                <span class="separator">|</span>
-                <span>LAST SYNC: 2026.02.24</span>
-                <span class="separator">|</span>
+                <span>TERMINAL SESSION ACTIVE</span> <span class="separator">|</span>
+                <span>LAST SYNC: 2026.02.24</span> <span class="separator">|</span>
                 <span class="redacted">OPERATOR: BAS</span>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-
-<script>
-/**
- * Iframe 元素高亮注入脚本
- * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
- *
- * 使用方法：
- * 1. 将此脚本添加到目标网站的 HTML 中
- * 2. 或通过浏览器扩展、用户脚本等方式注入
- */
-
-(function () {
-  "use strict";
-
-  // 检查是否在 iframe 中
-  if (window.self === window.top) {
-    return; // 不在 iframe 中，不执行
-  }
-
-  // 检查是否已经初始化过
-  if (window.__iframeHighlightInitialized) {
-    return;
-  }
-  window.__iframeHighlightInitialized = true;
-  console.log("Iframe 高亮脚本已加载");
-
-  // 创建高亮覆盖层
-  var overlay = document.createElement("div");
-  overlay.id = "iframe-highlight-overlay";
-  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
-
-  // 创建悬停高亮框（虚线边框）
-  var highlightBox = document.createElement("div");
-  highlightBox.id = "iframe-highlight-box";
-  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
-
-  // 创建选中节点的常驻高亮框（实线边框）
-  var selectedBox = document.createElement("div");
-  selectedBox.id = "iframe-selected-box";
-  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
-
-  // 创建悬停标签显示
-  var tagLabel = document.createElement("div");
-  tagLabel.id = "iframe-tag-label";
-  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
-
-  // 创建选中节点标签
-  var selectedLabel = document.createElement("div");
-  selectedLabel.id = "iframe-selected-label";
-  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
-  overlay.appendChild(highlightBox);
-  overlay.appendChild(selectedBox);
-  overlay.appendChild(tagLabel);
-  overlay.appendChild(selectedLabel);
-  document.body.appendChild(overlay);
-
-  // 存储当前选中的元素
-  var selectedElement = null;
-  var highlightEnabled = false;
-
-  // 更新选中元素的高亮显示
-  function updateSelectedHighlight(element) {
-    console.log("updateSelectedHighlight called with:", element);
-    if (!element) {
-      selectedBox.style.display = "none";
-      selectedLabel.style.display = "none";
-      selectedElement = null;
-      console.log("Cleared selected highlight");
-      return;
-    }
-    selectedElement = element;
-    var rect = element.getBoundingClientRect();
-    console.log("Selected element rect:", rect);
-
-    // 更新选中高亮框位置
-    selectedBox.style.display = "block";
-    selectedBox.style.left = "".concat(rect.left - 2, "px");
-    selectedBox.style.top = "".concat(rect.top - 2, "px");
-    selectedBox.style.width = "".concat(rect.width + 4, "px");
-    selectedBox.style.height = "".concat(rect.height + 4, "px");
-
-    // 更新选中标签位置和内容
-    selectedLabel.style.display = "block";
-    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
-
-    // 计算标签位置，确保不超出视窗
-    var labelTop = rect.top - 28;
-    var labelLeft = rect.left;
-
-    // 如果标签会超出顶部，显示在元素下方
-    if (labelTop < 5) {
-      labelTop = rect.bottom + 5;
-    }
-
-    // 如果标签会超出右侧，向左调整
-    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
-    if (labelLeft + labelWidth > window.innerWidth - 10) {
-      labelLeft = window.innerWidth - labelWidth - 10;
-    }
-    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
-    selectedLabel.style.top = "".concat(labelTop, "px");
-    console.log("Selected highlight positioned at:", {
-      left: selectedBox.style.left,
-      top: selectedBox.style.top,
-      width: selectedBox.style.width,
-      height: selectedBox.style.height
-    });
-  }
-  function getElementSelector(element) {
-    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
-    var segments = [];
-    var current = element;
-    while (current !== document.documentElement) {
-      var selector = '';
-      // 优先检查唯一ID
-      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
-        segments.unshift("#".concat(current.id));
-        break; // ID唯一，无需继续向上
-      }
-
-      // 生成类名选择器（取第一个有效类名）
-      var classes = Array.from(current.classList).filter(function (c) {
-        return !c.startsWith('js-');
-      });
-      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
-
-      // 生成位置索引（nth-child）
-      var tag = current.tagName.toLowerCase();
-      if (!className) {
-        var siblings = Array.from(current.parentNode.children);
-        var index = siblings.findIndex(function (el) {
-          return el === current;
-        }) + 1;
-        selector = "".concat(tag, ":nth-child(").concat(index, ")");
-      } else {
-        selector = className;
-      }
-      segments.unshift(selector);
-      current = current.parentElement;
-    }
-
-    // 处理根元素
-    if (current === document.documentElement) {
-      segments.unshift('html');
-    }
-    return segments.join(' > ');
-  }
-
-  // 获取元素文本内容
-  function getElementText(element) {
-    var _element$textContent;
-    if (element.tagName === "INPUT") {
-      return element.value || element.placeholder || "";
-    }
-    if (element.tagName === "TEXTAREA") {
-      return element.value || element.placeholder || "";
-    }
-    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
-    return text.length > 50 ? text.substring(0, 50) + "..." : text;
-  }
-
-  // 获取元素属性信息
-  function getElementAttributes(element) {
-    var attrs = {};
-    for (var i = 0; i < element.attributes.length; i++) {
-      var attr = element.attributes[i];
-      attrs[attr.name] = attr.value;
-    }
-    return attrs;
-  }
-
-  // 鼠标悬停事件处理
-  function handleMouseOver(e) {
-    if (!highlightEnabled) return;
-    var target = e.target;
-    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-      return;
-    }
-
-    // 避免高亮 html 和 body 元素
-    if (target === document.documentElement || target === document.body) {
-      return;
-    }
-
-    // 如果是已选中的元素，不显示悬停高亮
-    if (target === selectedElement) {
-      highlightBox.style.display = "none";
-      tagLabel.style.display = "none";
-      return;
-    }
-    var rect = target.getBoundingClientRect();
-    var selector = getElementSelector(target);
-    var text = getElementText(target);
-    var attributes = getElementAttributes(target);
-
-    // 更新悬停高亮框位置
-    highlightBox.style.display = "block";
-    highlightBox.style.left = "".concat(rect.left - 2, "px");
-    highlightBox.style.top = "".concat(rect.top - 2, "px");
-    highlightBox.style.width = "".concat(rect.width + 4, "px");
-    highlightBox.style.height = "".concat(rect.height + 4, "px");
-
-    // 更新标签位置和内容
-    tagLabel.style.display = "block";
-    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
-
-    // 计算标签位置，确保不超出视窗
-    var labelTop = rect.top - 22;
-    var labelLeft = rect.left;
-
-    // 如果标签会超出顶部，显示在元素下方
-    if (labelTop < 0) {
-      labelTop = rect.bottom + 5;
-    }
-
-    // 如果标签会超出右侧，向左调整
-    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
-      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
-    }
-    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
-    tagLabel.style.top = "".concat(labelTop, "px");
-
-    // 发送消息到父窗口
-    var elementInfo = {
-      tagName: target.tagName.toLowerCase(),
-      rect: {
-        left: rect.left,
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        width: rect.width,
-        height: rect.height,
-        x: rect.x,
-        y: rect.y
-      },
-      selector: selector,
-      text: text,
-      attributes: attributes,
-      url: window.location.href,
-      path: window.location.pathname,
-      timestamp: Date.now()
-    };
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-hover",
-        data: elementInfo,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 鼠标离开事件处理
-  function handleMouseOut(e) {
-    if (!highlightEnabled) return;
-    var relatedTarget = e.relatedTarget;
-
-    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
-    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
-      return;
-    }
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-hover",
-        data: null,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 点击事件处理
-  function handleClick(e) {
-    var target = e.target;
-    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-      return;
-    }
-
-    // 避免处理 html 和 body 元素
-    if (target === document.documentElement || target === document.body) {
-      return;
-    }
-
-    // 检查是否是交互元素，这些元素需要保留默认行为
-    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
-
-    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
-    if (highlightEnabled) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    var rect = target.getBoundingClientRect();
-    var selector = getElementSelector(target);
-    var text = getElementText(target);
-    var attributes = getElementAttributes(target);
-    console.log("Element clicked:", {
-      tagName: target.tagName,
-      selector: selector,
-      rect: rect
-    });
-
-    // 立即更新选中高亮
-    updateSelectedHighlight(target);
-
-    // 隐藏悬停高亮，因为现在是选中状态
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    var elementInfo = {
-      tagName: target.tagName.toLowerCase(),
-      rect: {
-        left: rect.left,
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        width: rect.width,
-        height: rect.height,
-        x: rect.x,
-        y: rect.y
-      },
-      selector: selector,
-      text: text,
-      attributes: attributes,
-      url: window.location.href,
-      path: window.location.pathname,
-      timestamp: Date.now()
-    };
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-click",
-        data: elementInfo,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 监听来自父窗口的消息
-  function handleParentMessage(event) {
-    console.log("Received message from parent:", event.data);
-    if (event.data.type === "iframe-highlight-toggle") {
-      var enabled = event.data.enabled;
-      console.log("Highlight toggle:", enabled);
-      if (enabled) {
-        enableHighlight();
-      } else {
-        disableHighlight();
-      }
-    } else if (event.data.type === "enable-iframe-highlight") {
-      console.log("Enable iframe highlight");
-      enableHighlight();
-    } else if (event.data.type === "disable-iframe-highlight") {
-      console.log("Disable iframe highlight");
-      disableHighlight();
-    } else if (event.data.type === "toggle-iframe-highlight") {
-      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
-      console.log("Toggle iframe highlight to:", _enabled);
-      if (_enabled) {
-        enableHighlight();
-      } else {
-        disableHighlight();
-      }
-    } else if (event.data.type === "update-selected-element") {
-      var selector = event.data.selector;
-      console.log("Update selected element with selector:", selector);
-      if (selector) {
-        try {
-          var element = document.querySelector(selector);
-          console.log("Found element by selector:", element);
-          updateSelectedHighlight(element);
-        } catch (error) {
-          console.warn("Failed to select element:", error);
-          updateSelectedHighlight(null);
-        }
-      } else {
-        updateSelectedHighlight(null);
-      }
-    } else if (event.data.type === "clear-selected-element") {
-      console.log("Clear selected element");
-      updateSelectedHighlight(null);
-    }
-  }
-
-  // 启用高亮功能
-  function enableHighlight() {
-    console.log("Enabling highlight");
-    document.addEventListener("mouseover", handleMouseOver, true);
-    document.addEventListener("mouseout", handleMouseOut, true);
-    document.addEventListener("click", handleClick, true);
-    highlightEnabled = true;
-    overlay.style.display = "block";
-  }
-
-  // 禁用高亮功能
-  function disableHighlight() {
-    console.log("Disabling highlight");
-    highlightEnabled = false;
-    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
-    // 这样可以保留选中状态的显示
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
-  }
-
-  // 完全禁用高亮功能（移除所有监听器）
-  function fullyDisableHighlight() {
-    console.log("Fully disabling highlight");
-    highlightEnabled = false;
-    document.removeEventListener("mouseover", handleMouseOver, true);
-    document.removeEventListener("mouseout", handleMouseOut, true);
-    document.removeEventListener("click", handleClick, true);
-    overlay.style.display = "none";
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    selectedBox.style.display = "none";
-    selectedLabel.style.display = "none";
-  }
-
-  // 添加事件监听
-  enableHighlight();
-  window.addEventListener("message", handleParentMessage);
-
-  // 暴露全局函数供外部调用
-  window.__iframeHighlightControl = {
-    enable: enableHighlight,
-    disable: disableHighlight,
-    fullyDisable: fullyDisableHighlight,
-    isEnabled: function isEnabled() {
-      return highlightEnabled;
-    },
-    getSelectedElement: function getSelectedElement() {
-      return selectedElement;
-    },
-    updateSelected: updateSelectedHighlight,
-    // 通过消息发送开关控制
-    sendToggleMessage: function sendToggleMessage(enabled) {
-      window.parent.postMessage({
-        type: 'iframe-highlight-status',
-        enabled: enabled || highlightEnabled,
-        source: 'iframe-highlight-injector'
-      }, '*');
-    }
-  };
-
-  // 通知父窗口脚本已加载
-  try {
-    window.parent.postMessage({
-      type: "iframe-highlight-ready",
-      data: {
-        url: window.location.href,
-        userAgent: navigator.userAgent,
-        timestamp: Date.now()
-      },
-      source: "iframe-highlight-injector"
-    }, "*");
-  } catch (error) {
-    console.warn("无法发送就绪消息到父窗口:", error);
-  }
-
-  // 清理函数
-  window.__iframeHighlightCleanup = function () {
-    fullyDisableHighlight();
-    window.removeEventListener("message", handleParentMessage);
-    if (overlay.parentElement) {
-      overlay.parentElement.removeChild(overlay);
-    }
-    delete window.__iframeHighlightInitialized;
-    delete window.__iframeHighlightCleanup;
-  };
-})();
-
-</script>
 </body>
 </html>
