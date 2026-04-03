@@ -41,7 +41,7 @@
             <div class="terminal-output">
                 <div class="terminal-line"><span class="prompt">></span> <span class="typing-text" data-text="INITIATING SYSTEM CHECK..."></span></div>
                 <div class="terminal-line"><span class="prompt">></span> IDENTITY CONFIRMED: <span class="highlight">UNIT: BAS</span></div>
-                <div class="terminal-line"><span class="prompt">></span> ROLE: <span class="amber">AI & SECURITY ENGINEER</span> | <span class="amber">DEVOPS</span> | <span class="amber">TACTICAL COMMS</span></div>
+                <div class="terminal-line"><span class="prompt">></span> ROLE: <span class="amber">ARDUPILOT SYSTEMS ENGINEER</span> | <span class="amber">FPV & AUTONOMOUS FLIGHT</span></div>
                 <div class="terminal-line"><span class="prompt">></span> STATUS: <span class="green">OPERATIONAL</span> // <span class="green">READY FOR DEPLOYMENT</span></div>
                 <div class="terminal-line terminal-blink"><span class="prompt">></span> <span class="cursor">_</span></div>
             </div>
@@ -91,9 +91,9 @@
             </div>
             <div class="briefing-box">
                 <div class="briefing-header">>> MISSION_PROFILE</div>
-                <p class="briefing-text">Инженер-разработчик на стыке софта, железа и разведки данных. Специализируюсь на Python-автоматизации, архитектуре Mesh-сетей и интеграции ИИ в процессы принятия решений.</p>
+                <p class="briefing-text">Инженер автономных полётных систем. ArduPilot, PID tuning, SITL, MAVLink, FPV дроны. Автоматизация конфигурации и прошивки для серийного производства БпЛА. Действующий военнослужащий ВСУ.</p>
                 <div class="briefing-tags">
-                    <span class="tag">[PYTHON]</span> <span class="tag">[AI/ML]</span> <span class="tag">[SECURITY]</span> <span class="tag">[SDR]</span> <span class="tag">[DEVOPS]</span> <span class="tag">[MESH]</span>
+                    <span class="tag">[ARDUPILOT]</span> <span class="tag">[PID TUNING]</span> <span class="tag">[SITL]</span> <span class="tag">[MAVLINK]</span> <span class="tag">[FPV]</span> <span class="tag">[PYTHON]</span> <span class="tag">[COMBAT SYSTEMS]</span>
                 </div>
             </div>
         </div>
@@ -107,46 +107,34 @@
             </div>
             <div class="projects-grid">
                 <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">STRATEGIC INTEL AI</h3></div>
-                    <p class="project-desc">Система анализа тактических данных и OSINT на базе RAG.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>QDRANT</span></div>
-                    <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-002]</span><h3 class="project-title">AUTORECON</h3></div>
-                    <p class="project-desc">Автоматизированная разведка и сбор данных.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>NMAP</span><span>BASH</span></div>
-                    <a href="https://github.com/Redrock453/AutoRecon" target="_blank" class="project-link">> ACCESS_REPO</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-003]</span><h3 class="project-title">GSM SECURITY</h3></div>
-                    <p class="project-desc">Исследование уязвимостей GSM через SDR.</p>
-                    <div class="project-tech"><span>SDR</span><span>PYTHON</span><span>OSMOCOM</span></div>
-                    <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">> ACCESS_REPO</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-004]</span><h3 class="project-title">GRIM-FPV-AI</h3></div>
-                    <p class="project-desc">Autonomous flight platform для боевого FPV дрона ГРІМ-5. OpenVINS SLAM/VIO, YOLOv8+ByteTrack perception, hierarchical FSM (safety/navigation), MAVLink control, ArduPilot integration.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>OPENVINS</span><span>YOLOV8</span><span>ARDUPILOT</span></div>
+                    <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">GRIM-FPV-AI</h3></div>
+                    <p class="project-desc">Autonomous flight platform для боевого FPV 5" дрона ГРІМ-5. PID auto-tuner для ArduPilot SITL (~100 комбинаций roll/pitch/yaw, scoring function), MAVLink transport layer (ENU/NED transforms, retransmission), кастомний режим GRIM_COMBAT, 5 типів бойових місій з реалістичною телеметрією. Результат тюнінгу: roll ±8-15° → ±2-5° у вітер 10 м/с.</p>
+                    <div class="project-tech"><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>PID</span><span>PYTHON</span><span>FASTAPI</span><span>YOLOV8</span><span>OPENVINS</span></div>
                     <a href="https://github.com/Redrock453/grim-fpv-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">GRIM WORLD MODEL</h3></div>
+                    <div class="project-header"><span class="project-id">[OBJ-002]</span><h3 class="project-title">GRIM WORLD MODEL</h3></div>
                     <p class="project-desc">VAE-based predictive dynamics model для collision avoidance. Encodes visual observations, predicts future states, computes safety metrics (collision probability, obstacle distance). Jetson Orin optimized.</p>
                     <div class="project-tech"><span>PYTORCH</span><span>PYTHON</span><span>NUMPY</span><span>OPENCV</span></div>
                     <a href="https://github.com/Redrock453/grim-world-model" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-006]</span><h3 class="project-title">TACTICAL MESH</h3></div>
-                    <p class="project-desc">Децентрализованная LoRa-сеть для работы в условиях РЭБ.</p>
-                    <div class="project-tech"><span>C++</span><span>LORA</span><span>MESH</span></div>
+                    <div class="project-header"><span class="project-id">[OBJ-003]</span><h3 class="project-title">TACTICAL MESH</h3></div>
+                    <p class="project-desc">Децентрализованная LoRa mesh-сеть (ESP32-S3 + SX1262) для тактической связи в условиях РЭБ. FHSS, AES-256-GCM, ATAK integration, KiCad PCB.</p>
+                    <div class="project-tech"><span>C++</span><span>LORA</span><span>FHSS</span><span>ATAK</span><span>KICAD</span></div>
                     <a href="https://github.com/Redrock453/TacticalMesh" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-007]</span><h3 class="project-title">OMNISCIENT ANALYZER</h3></div>
-                    <p class="project-desc">Мультикомпонентная система сбора и анализа данных. Heartbeat мониторинг, MCP сервер, коллекторы.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>MCP</span><span>SQLITE</span></div>
-                    <a href="https://github.com/Redrock453/omniscient-analyzer" target="_blank" class="project-link">> ACCESS_REPO</a>
+                    <div class="project-header"><span class="project-id">[OBJ-004]</span><h3 class="project-title">GSM SECURITY & SDR</h3></div>
+                    <p class="project-desc">Глубокий анализ GSM протокола (L1/L2/L3, GMSK, TDMA, LAPDm). Rogue BTS detection, SDR signal chain design (HackRF, RTL-SDR), Python скрипт виявлення аномалій.</p>
+                    <div class="project-tech"><span>SDR</span><span>HACKRF</span><span>PYTHON</span><span>GNU RADIO</span><span>OSMOCOM</span></div>
+                    <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">> ACCESS_REPO</a>
+                </article>
+                <article class="project-card">
+                    <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">STRATEGIC INTEL AI</h3></div>
+                    <p class="project-desc">Multi-agent OSINT platform: RAG (Qdrant), LangChain + AutoGen + CrewAI, document processing, dark web monitoring.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>QDRANT</span><span>LANGCHAIN</span><span>AUTOGEN</span></div>
+                    <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
             </div>
         </div>
@@ -181,7 +169,7 @@
         <div class="footer-content">
             <div class="footer-status">
                 <span>TERMINAL SESSION ACTIVE</span> <span class="separator">|</span>
-                <span>LAST SYNC: 2026.04.03</span> <span class="separator">|</span>
+                <span>LAST SYNC: 2026.04.03</span> <span class="separator">|</span> <span class="redacted">ACTIVE MILITARY</span> <span class="separator">|</span>
                 <span class="redacted">OPERATOR: BAS</span>
             </div>
         </div>

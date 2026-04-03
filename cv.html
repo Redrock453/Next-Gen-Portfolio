@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam — ArduPilot Systems Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media print {
+            body { padding: 0; background: #fff; color: #111; }
+            .no-print { display: none; }
+        }
+
+        .header {
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00ff88;
+            letter-spacing: 0.05em;
+        }
+
+        .header .role {
+            font-size: 1.1rem;
+            color: #888;
+            margin-top: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .header .contacts {
+            margin-top: 0.75rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .header .contacts a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #00ff88;
+            border-bottom: 1px solid #222;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 0.95rem;
+            color: #ccc;
+            border-left: 3px solid #00ff88;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .military-badge {
+            display: inline-block;
+            background: #1a3a1a;
+            color: #00ff88;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-group h4 {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid #333;
+            border-radius: 3px;
+            color: #ccc;
+        }
+
+        .skill-tag.primary {
+            border-color: #00ff88;
+            color: #00ff88;
+        }
+
+        /* Project card */
+        .project {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            background: #0f0f0f;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .project-name a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .project-name a:hover {
+            color: #00ff88;
+        }
+
+        .project-role {
+            font-size: 0.75rem;
+            color: #666;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-highlights li {
+            font-size: 0.82rem;
+            color: #bbb;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .project-highlights li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            background: #1a1a1a;
+            color: #888;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .cv-footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #222;
+            font-size: 0.75rem;
+            color: #555;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>ADAM</h1>
+    <div class="role">ArduPilot Systems Engineer | FPV & Autonomous Flight</div>
+    <div class="contacts">
+        <span>Signal: <a href="https://signal.me/#eu/55JcP2IdtZK4K5BJDd756518pZ16DVohm74UVbXus_JzjRjGd5hL-Jq8N7ZvVgGO">available</a></span>
+        <span>GitHub: <a href="https://github.com/Redrock453">Redrock453</a></span>
+        <span>Location: Lviv, Ukraine</span>
+        <span>Status: Active Military Service</span>
+    </div>
+    <div class="military-badge">ACTIVE DUTY — AVAILABLE FOR ASSIGNMENT</div>
+</div>
+
+<!-- SUMMARY -->
+<section class="section">
+    <div class="section-title">Profile</div>
+    <div class="summary">
+        Self-taught systems engineer specializing in ArduPilot firmware configuration, autonomous flight systems, and drone AI integration. Built a full-stack engineering platform (GRIM-FPV-AI) covering PID auto-tuning, SITL simulation, MAVLink communication, RF link analysis, and computer vision pipeline for a combat FPV drone. Active military service member with understanding of tactical requirements for UAV systems in contested environments. Focused on automating firmware flashing and configuration for production-scale drone manufacturing.
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h4>Flight Systems</h4>
+            <div class="skill-tags">
+                <span class="skill-tag primary">ArduPilot</span>
+                <span class="skill-tag primary">SITL</span>
+                <span class="skill-tag primary">PID Tuning</span>
+                <span class="skill-tag primary">MAVLink</span>
+                <span class="skill-tag primary">Mission Planner</span>
+                <span class="skill-tag">Flight Modes</span>
+                <span class="skill-tag">Auto Mission</span>
+                <span class="skill-tag">RTL</span>
+                <span class="skill-tag">Failsafe</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Hardware / Flight Controllers</h4>
+            <div class="skill-tags">
+                <span class="skill-tag primary">Pixhawk 6X</span>
+                <span class="skill-tag">STM32H743</span>
+                <span class="skill-tag">SpeedyBee F405</span>
+                <span class="skill-tag">GPS/GNSS (M9N)</span>
+                <span class="skill-tag">LiDAR (TF02 Pro)</span>
+                <span class="skill-tag">ExpressLRS</span>
+                <span class="skill-tag">Crossfire</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Perception / AI</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">YOLOv8</span>
+                <span class="skill-tag">ByteTrack</span>
+                <span class="skill-tag">OpenVINS SLAM</span>
+                <span class="skill-tag">TensorRT</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">VAE</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>RF / Comms</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">SDR (HackRF)</span>
+                <span class="skill-tag">LoRa Mesh</span>
+                <span class="skill-tag">FHSS</span>
+                <span class="skill-tag">Link Budget</span>
+                <span class="skill-tag">FSPL</span>
+                <span class="skill-tag">GSM Analysis</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Programming</h4>
+            <div class="skill-tags">
+                <span class="skill-tag primary">Python</span>
+                <span class="skill-tag">C/C++</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">asyncio</span>
+                <span class="skill-tag">Shell/Bash</span>
+                <span class="skill-tag">MAVProxy</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>DevOps / Automation</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Batch Scripts</span>
+                <span class="skill-tag">Systemd</span>
+                <span class="skill-tag">CI/CD</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY PROJECTS -->
+<section class="section">
+    <div class="section-title">Key Projects</div>
+
+    <div class="project">
+        <div class="project-header">
+            <span class="project-name"><a href="https://github.com/Redrock453/grim-fpv-ai">GRIM-FPV-AI</a></span>
+            <span class="project-role">Lead Engineer | 2026</span>
+        </div>
+        <div class="project-desc">
+            Full-stack autonomous flight engineering platform for GRIM-5 combat FPV drone (5", 865g AUW, 6S, TWR 4.86). Covers the entire pipeline: from hardware specification to autonomous mission execution.
+        </div>
+        <ul class="project-highlights">
+            <li>PID auto-tuner for ArduPilot SITL: sweep generator testing ~100 roll/pitch/yaw combinations with scoring function (rate_error_RMS×0.5 + oscillation×0.3 + overshoot×0.2). Achieved roll stability ±2-5° in 10 m/s wind (down from ±8-15°)</li>
+            <li>MAVLink transport layer: ENU↔NED coordinate transforms, command retransmission with exponential backoff, support for takeoff/land/RTL/set_position/set_velocity</li>
+            <li>Custom ArduPilot flight mode GRIM_COMBAT (#20): auto-arm → hover 5m → RTL with failsafe</li>
+            <li>7 engineering calculators: flight time, hover current, RF link budget (FSPL), thermal analysis (PA + motor), PID recommendations, range estimation</li>
+            <li>Flight simulator: 5 combat mission types (recon/intercept/loiter/strike/delivery) with realistic telemetry — GPS drift, 6S voltage model, battery drain from throttle, FSPL-based RSSI, wind turbulence</li>
+            <li>HFSM autonomous controller: 2-level hierarchy (Safety: AVOID/EMERGENCY_LAND > Navigation: IDLE/SEARCH/TRACK/PATROL/RETURN), 10Hz cycle, watchdog</li>
+            <li>Computer vision pipeline: YOLOv8 + ByteTrack in separate process (bypass GIL), TensorRT (Jetson) / NCNN (RPi+Hailo) backends</li>
+            <li>OpenVINS SLAM bridge: VIO frame validation, timestamp enforcement (gap >100ms rejection), quality threshold filtering</li>
+            <li>FastAPI server: 11 REST endpoints, Pydantic v2 validation, CORS, async architecture</li>
+        </ul>
+        <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">ArduPilot</span>
+            <span class="tech-tag">SITL</span>
+            <span class="tech-tag">MAVLink</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">OpenVINS</span>
+            <span class="tech-tag">Pydantic</span>
+            <span class="tech-tag">asyncio</span>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-header">
+            <span class="project-name"><a href="https://github.com/Redrock453/grim-world-model">GRIM World Model</a></span>
+            <span class="project-role">ML Engineer | 2026</span>
+        </div>
+        <div class="project-desc">
+            VAE-based predictive dynamics model for FPV drone collision avoidance and trajectory simulation. Encodes visual observations into latent space, predicts future states, computes safety metrics (collision probability, obstacle proximity).
+        </div>
+        <ul class="project-highlights">
+            <li>Variational autoencoder for state prediction and collision risk estimation</li>
+            <li>Optimized for edge deployment on NVIDIA Jetson Orin</li>
+            <li>Part of GRIM-5 ecosystem — provides safety layer to autonomous flight controller</li>
+        </ul>
+        <div class="project-tech">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Jetson Orin</span>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-header">
+            <span class="project-name"><a href="https://github.com/Redrock453/TacticalMesh">TacticalMesh</a></span>
+            <span class="project-role">Systems Engineer | 2026</span>
+        </div>
+        <div class="project-desc">
+            Decentralized LoRa mesh network for tactical communications in EW-contested environments. Designed for military and humanitarian operations with ATAK integration.
+        </div>
+        <ul class="project-highlights">
+            <li>ESP32-S3 + SX1262 LoRa: 5km urban / 10km open terrain range</li>
+            <li>FHSS (Frequency Hopping Spread Spectrum) for EW resistance</li>
+            <li>AES-256-GCM + X25519 encryption with Perfect Forward Secrecy</li>
+            <li>ATAK (Android Team Awareness Kit) integration</li>
+            <li>KiCad PCB design, Flutter mobile app, cost < $100/node</li>
+        </ul>
+        <div class="project-tech">
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">ESP32-S3</span>
+            <span class="tech-tag">SX1262</span>
+            <span class="tech-tag">LoRa</span>
+            <span class="tech-tag">KiCad</span>
+            <span class="tech-tag">ATAK</span>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-header">
+            <span class="project-name"><a href="https://github.com/Redrock453/gsm-fake-points-guide">GSM Security & SDR Research</a></span>
+            <span class="project-role">RF Research | 2026</span>
+        </div>
+        <div class="project-desc">
+            Deep analysis of GSM protocol vulnerabilities and rogue BTS detection. Full protocol stack coverage (L1/L2/L3), SDR hardware comparison, RF signal chain design.
+        </div>
+        <ul class="project-highlights">
+            <li>GSM protocol stack: GMSK modulation, TDMA framing, LAPDm signaling, C1/C2 cell selection</li>
+            <li>SDR hardware: HackRF One, RTL-SDR, BladeRF, USRP — signal chain design (BPF + LNA + SDR)</li>
+            <li>Rogue BTS detection: Python script monitoring for cell reselection anomalies, signal inconsistencies</li>
+            <li>Countermeasures framework for blue team deployment</li>
+        </ul>
+        <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SDR</span>
+            <span class="tech-tag">HackRF</span>
+            <span class="tech-tag">GNU Radio</span>
+            <span class="tech-tag">OsmocomBB</span>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-header">
+            <span class="project-name"><a href="https://github.com/Redrock453/strategic-intelligence-ai">Strategic Intelligence AI</a></span>
+            <span class="project-role">AI Engineer | 2026</span>
+        </div>
+        <div class="project-desc">
+            Multi-agent OSINT platform with RAG pipeline, document processing, and multi-agent decision orchestration (LangChain, AutoGen, CrewAI).
+        </div>
+        <ul class="project-highlights">
+            <li>RAG with Qdrant vector DB + sentence-transformers embeddings</li>
+            <li>Multi-agent orchestration: LangChain + AutoGen + CrewAI</li>
+            <li>Document processing: OCR, NER, chunking, multi-format ingestion</li>
+        </ul>
+        <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Qdrant</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">AutoGen</span>
+        </div>
+    </div>
+</section>
+
+<!-- DRONE HARDWARE KNOWLEDGE -->
+<section class="section">
+    <div class="section-title">Drone Hardware — GRIM-5 Build Specification</div>
+    <div class="summary">
+        Designed complete 5" combat FPV drone specification with full component selection and engineering calculations:
+    </div>
+    <ul class="project-highlights">
+        <li>Frame: iFlight XL5 Pro 5" | Motors: T-Motor U8 Pro 2000KV | ESC: 40A BLheli_32 (6S)</li>
+        <li>FC: Pixhawk 6X (STM32H743) / SpeedyBee F405 V4 | GPS: UBLOX M9N dual antenna</li>
+        <li>Rangefinder: Benewake TF02 Pro LiDAR (40m) | Barometer + Magnetometer</li>
+        <li>VTX: TBS Unify Pro32 600mW | RX: ExpressLRS 2.4GHz + Crossfire Nano RX</li>
+        <li>Battery: 6S 850mAh 75C (18.87Wh) | AUW: 865g | TWR: 4.86 | Props: 5045 Carbon</li>
+        <li>Calculated: ~6.4 min flight time, 37A hover current, RF link budget for tactical ranges</li>
+    </ul>
+</section>
+
+<!-- LANGUAGES -->
+<section class="section">
+    <div class="section-title">Languages</div>
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h4>Ukrainian</h4>
+            <div class="skill-tags"><span class="skill-tag">Native</span></div>
+        </div>
+        <div class="skill-group">
+            <h4>English</h4>
+            <div class="skill-tags"><span class="skill-tag">Professional</span></div>
+        </div>
+        <div class="skill-group">
+            <h4>Russian</h4>
+            <div class="skill-tags"><span class="skill-tag">Fluent</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ADDITIONAL -->
+<section class="section">
+    <div class="section-title">Additional</div>
+    <ul class="project-highlights">
+        <li>78 public GitHub repositories demonstrating breadth across drone systems, AI, RF, security, and DevOps</li>
+        <li>Multi-AI integration experience: Gemini, Groq, GLM, Claude, Ollama, OpenRouter</li>
+        <li>Automation-first mindset: CI/CD pipelines, batch processing, configuration management</li>
+        <li>Rapid self-learning: built complete drone engineering stack from documentation and practice</li>
+    </ul>
+</section>
+
+<div class="cv-footer">
+    CV generated 2026.04.03 | github.com/Redrock453 | All projects publicly available
+</div>
+
+</body>
+</html>
