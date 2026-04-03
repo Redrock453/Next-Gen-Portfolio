@@ -200,7 +200,6 @@ body::after {
     border: 1px solid var(--border);
     font-family: var(--font-mono);
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
 .terminal-output::before {
