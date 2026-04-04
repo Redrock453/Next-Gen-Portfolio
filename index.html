@@ -8,7 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M55 5L25 55h20L35 95 75 45H55z' fill='%23FF9F1C'/></svg>">
+    <meta property="og:title" content="UNIT: BAS | Tactical Operations">
+    <meta property="og:description" content="ArduPilot Systems Engineer — FPV & Autonomous Flight. 70+ projects, 5+ years experience. Active military service.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Redrock453/Next-Gen-Portfolio/main/og-image.png">
+    <meta property="og:url" content="https://redrock453.github.io/Next-Gen-Portfolio/">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Portfolio of BAS — ArduPilot Systems Engineer specializing in autonomous flight, FPV drones, and tactical communications.">
 </head>
 <body>
     <div class="scanlines"></div>
@@ -29,12 +35,25 @@
                 <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
                 <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
             </nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="status-indicator">
                 <span class="status-dot"></span>
                 <span class="status-text">ONLINE</span>
             </div>
         </div>
     </header>
+
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <a href="#about" class="nav-item"><span class="nav-marker">></span> INTEL</a>
+        <a href="#projects" class="nav-item"><span class="nav-marker">></span> OBJECTIVES</a>
+        <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
+        <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
+    </nav>
 
     <section class="hero">
         <div class="hero-content">
@@ -146,6 +165,167 @@
         </div>
     </section>
 
+    <section id="stack" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[ARSENAL-001]</span>
+                <h2 class="section-title">TECH ARSENAL</h2>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-module">
+                    <div class="module-header">
+                        <span class="module-id">[MOD-001]</span>
+                        <span class="module-name">FLIGHT SYSTEMS</span>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">ArduPilot</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">SITL</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">PID Tuning</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">MAVLink</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-module">
+                    <div class="module-header">
+                        <span class="module-id">[MOD-002]</span>
+                        <span class="module-name">PERCEPTION / AI</span>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">YOLOv8</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">ByteTrack</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">OpenVINS</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">PyTorch / VAE</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-module">
+                    <div class="module-header">
+                        <span class="module-id">[MOD-003]</span>
+                        <span class="module-name">RF / COMMS</span>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">SDR</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">LoRa</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">FHSS</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">GSM Analysis</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-module">
+                    <div class="module-header">
+                        <span class="module-id">[MOD-004]</span>
+                        <span class="module-name">PROGRAMMING</span>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">Python</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">C/C++</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">FastAPI</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">TypeScript</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-module">
+                    <div class="module-header">
+                        <span class="module-id">[MOD-005]</span>
+                        <span class="module-name">DEVOPS</span>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">Docker</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">CI/CD</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">systemd</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">Tailscale</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
@@ -165,6 +345,7 @@
                     </div>
                 </div>
                 <div class="action-box">
+                    <a href="cv.html" class="action-btn">> VIEW CLASSIFIED DOSSIER (CV)</a>
                     <a href="https://signal.me/#eu/55JcP2IdtZK4K5BJDd756518pZ16DVohm74UVbXus_JzjRjGd5hL-Jq8N7ZvVgGO" target="_blank" class="action-btn">> INITIATE UPLINK</a>
                 </div>
             </div>
