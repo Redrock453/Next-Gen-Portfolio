@@ -30,19 +30,25 @@
                 <span class="logo-bracket">]</span>
             </div>
             <nav class="nav">
-                <a href="#about" class="nav-item"><span class="nav-marker">></span> INTEL</a>
-                <a href="#projects" class="nav-item"><span class="nav-marker">></span> OBJECTIVES</a>
-                <a href="#impact" class="nav-item"><span class="nav-marker">></span> IMPACT</a>
-                <a href="#timeline" class="nav-item"><span class="nav-marker">></span> TIMELINE</a>
-                <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
-                <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
-                <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
+                <a href="#about" class="nav-item"><span class="nav-marker">></span> <span data-ua="РОЗВІДДАНІ" data-en="INTEL">INTEL</span></a>
+                <a href="#projects" class="nav-item"><span class="nav-marker">></span> <span data-ua="ЗАВДАННЯ" data-en="OBJECTIVES">OBJECTIVES</span></a>
+                <a href="#impact" class="nav-item"><span class="nav-marker">></span> <span data-ua="ВПЛИВ" data-en="IMPACT">IMPACT</span></a>
+                <a href="#timeline" class="nav-item"><span class="nav-marker">></span> <span data-ua="ХРОНОЛОГІЯ" data-en="TIMELINE">TIMELINE</span></a>
+                <a href="#stack" class="nav-item"><span class="nav-marker">></span> <span data-ua="АРСЕНАЛ" data-en="ARSENAL">ARSENAL</span></a>
+                <a href="#status" class="nav-item"><span class="nav-marker">></span> <span data-ua="СТАТУС" data-en="STATUS">STATUS</span></a>
+                <a href="#calculators" class="nav-item"><span class="nav-marker">></span> <span data-ua="КАЛЬКУЛЯТОРИ" data-en="CALCULATORS">CALCULATORS</span></a>
+                <a href="#contact" class="nav-item"><span class="nav-marker">></span> <span data-ua="ЗВ'ЯЗОК" data-en="COMMS">COMMS</span></a>
             </nav>
             <button class="hamburger" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ua">UA</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <div class="status-indicator">
                 <span class="status-dot"></span>
                 <span class="status-text">ONLINE</span>
@@ -52,30 +58,46 @@
 
     <div class="mobile-overlay"></div>
     <nav class="mobile-nav">
-        <a href="#about" class="nav-item"><span class="nav-marker">></span> INTEL</a>
-        <a href="#projects" class="nav-item"><span class="nav-marker">></span> OBJECTIVES</a>
-        <a href="#impact" class="nav-item"><span class="nav-marker">></span> IMPACT</a>
-        <a href="#timeline" class="nav-item"><span class="nav-marker">></span> TIMELINE</a>
-        <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
-        <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
-        <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
+        <a href="#about" class="nav-item"><span class="nav-marker">></span> <span data-ua="РОЗВІДДАНІ" data-en="INTEL">INTEL</span></a>
+        <a href="#projects" class="nav-item"><span class="nav-marker">></span> <span data-ua="ЗАВДАННЯ" data-en="OBJECTIVES">OBJECTIVES</span></a>
+        <a href="#impact" class="nav-item"><span class="nav-marker">></span> <span data-ua="ВПЛИВ" data-en="IMPACT">IMPACT</span></a>
+        <a href="#timeline" class="nav-item"><span class="nav-marker">></span> <span data-ua="ХРОНОЛОГІЯ" data-en="TIMELINE">TIMELINE</span></a>
+        <a href="#stack" class="nav-item"><span class="nav-marker">></span> <span data-ua="АРСЕНАЛ" data-en="ARSENAL">ARSENAL</span></a>
+        <a href="#status" class="nav-item"><span class="nav-marker">></span> <span data-ua="СТАТУС" data-en="STATUS">STATUS</span></a>
+        <a href="#calculators" class="nav-item"><span class="nav-marker">></span> <span data-ua="КАЛЬКУЛЯТОРИ" data-en="CALCULATORS">CALCULATORS</span></a>
+        <a href="#contact" class="nav-item"><span class="nav-marker">></span> <span data-ua="ЗВ'ЯЗОК" data-en="COMMS">COMMS</span></a>
     </nav>
 
     <section class="hero">
         <canvas id="particle-canvas" class="particle-canvas"></canvas>
         <div class="hero-content">
-            <div class="terminal-output">
-                <div class="terminal-line"><span class="prompt">></span> <span class="typing-text" data-text="INITIATING SYSTEM CHECK..."></span></div>
-                <div class="terminal-line"><span class="prompt">></span> IDENTITY CONFIRMED: <span class="highlight">UNIT: BAS</span></div>
-                <div class="terminal-line"><span class="prompt">></span> ROLE: <span class="amber">ARDUPILOT SYSTEMS ENGINEER</span> | <span class="amber">FPV & AUTONOMOUS FLIGHT</span></div>
-                <div class="terminal-line"><span class="prompt">></span> STATUS: <span class="green">OPERATIONAL</span> // <span class="green">READY FOR DEPLOYMENT</span></div>
-                <div class="terminal-line terminal-blink"><span class="prompt">></span> <span class="cursor">_</span></div>
+            <div class="interactive-terminal" id="interactive-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-title">SECURE_TERMINAL_V3.0</span>
+                    <div class="terminal-controls">
+                        <span class="terminal-dot red-dot"></span>
+                        <span class="terminal-dot yellow-dot"></span>
+                        <span class="terminal-dot green-dot"></span>
+                    </div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line"><span class="prompt">></span> <span class="green">SYSTEM BOOT SEQUENCE INITIATED</span></div>
+                    <div class="terminal-line"><span class="prompt">></span> IDENTITY CONFIRMED: <span class="highlight">UNIT: BAS</span></div>
+                    <div class="terminal-line"><span class="prompt">></span> ROLE: <span class="amber">ARDUPILOT SYSTEMS ENGINEER</span></div>
+                    <div class="terminal-line"><span class="prompt">></span> <span class="green">Type 'help' for available commands</span></div>
+                    <div class="terminal-line"><span class="prompt">></span> <span class="green">─────────────────────────────────</span></div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">></span>
+                    <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="enter command...">
+                    <span class="cursor-blink">_</span>
+                </div>
             </div>
 
             <div class="hero-stats">
                 <div class="stat-box">
                     <div class="stat-header">
-                        <span class="stat-label">PROJECTS</span>
+                        <span class="stat-label" data-ua="ПРОЄКТИ" data-en="PROJECTS">PROJECTS</span>
                         <span class="stat-id">[DATA-001]</span>
                     </div>
                     <div class="stat-value">70+</div>
@@ -83,7 +105,7 @@
                 </div>
                 <div class="stat-box">
                     <div class="stat-header">
-                        <span class="stat-label">EXPERIENCE</span>
+                        <span class="stat-label" data-ua="ДОСВІД" data-en="EXPERIENCE">EXPERIENCE</span>
                         <span class="stat-id">[DATA-002]</span>
                     </div>
                     <div class="stat-value">5+</div>
@@ -101,10 +123,13 @@
         </div>
 
         <div class="hero-visual">
-            <div class="mesh-globe">
-                <div class="globe-ring ring-1"></div>
-                <div class="globe-ring ring-2"></div>
-                <div class="globe-ring ring-3"></div>
+            <canvas id="globe-canvas" class="globe-canvas"></canvas>
+            <div class="globe-fallback" id="globe-fallback" style="display:none;">
+                <div class="mesh-globe">
+                    <div class="globe-ring ring-1"></div>
+                    <div class="globe-ring ring-2"></div>
+                    <div class="globe-ring ring-3"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -113,11 +138,11 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-id">[INTEL-001]</span>
-                <h2 class="section-title">OPERATOR BRIEFING</h2>
+                <h2 class="section-title" data-ua="ОПЕРАТИВНА ЗВІТКА" data-en="OPERATOR BRIEFING">OPERATOR BRIEFING</h2>
             </div>
             <div class="briefing-box">
-                <div class="briefing-header">>> MISSION_PROFILE</div>
-                <p class="briefing-text">Инженер автономных полётных систем. ArduPilot, PID tuning, SITL, MAVLink, FPV дроны. Автоматизация конфигурации и прошивки для серийного производства БпЛА. Действующий военнослужащий ВСУ.</p>
+                <div class="briefing-header">>> <span data-ua="БОЙОВИЙ ПРОФІЛЬ" data-en="MISSION_PROFILE">MISSION_PROFILE</span></div>
+                <p class="briefing-text" data-ua="Інженер автономних польотних систем. ArduPilot, PID tuning, SITL, MAVLink, FPV дрони. Автоматизація конфігурації та прошивки для серійного виробництва БпЛА. Діючий військовослужбовець ЗСУ." data-en="Engineer of autonomous flight systems. ArduPilot, PID tuning, SITL, MAVLink, FPV drones. Automation of configuration and firmware for serial UAV production. Active military service in the Armed Forces of Ukraine.">Інженер автономних польотних систем. ArduPilot, PID tuning, SITL, MAVLink, FPV дрони. Автоматизація конфігурації та прошивки для серійного виробництва БпЛА. Діючий військовослужбовець ЗСУ.</p>
                 <div class="briefing-tags">
                     <span class="tag">[ARDUPILOT]</span> <span class="tag">[PID TUNING]</span> <span class="tag">[SITL]</span> <span class="tag">[MAVLINK]</span> <span class="tag">[FPV]</span> <span class="tag">[PYTHON]</span> <span class="tag">[COMBAT SYSTEMS]</span>
                 </div>
@@ -602,6 +627,100 @@
         </div>
     </section>
 
+    <section id="calculators" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[CALC-001]</span>
+                <h2 class="section-title" data-ua="ТАКТИЧНІ КАЛЬКУЛЯТОРИ" data-en="TACTICAL CALCULATORS">TACTICAL CALCULATORS</h2>
+            </div>
+            <div class="calculators-grid">
+                <div class="calc-box">
+                    <div class="calc-header">>> RF_LINK_BUDGET</div>
+                    <div class="calc-formula">Pr = Pt + Gt + Gr - Lfs - Lm</div>
+                    <div class="calc-fields">
+                        <div class="calc-field">
+                            <label data-ua="Потужність передавача (dBm)" data-en="Transmit Power (dBm)">Transmit Power (dBm)</label>
+                            <input type="number" id="rf-pt" value="20" step="0.1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Коефіцієнт підсилення передавальної антени (dBi)" data-en="TX Antenna Gain (dBi)">TX Antenna Gain (dBi)</label>
+                            <input type="number" id="rf-gt" value="2" step="0.1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Коефіцієнт підсилення приймальної антени (dBi)" data-en="RX Antenna Gain (dBi)">RX Antenna Gain (dBi)</label>
+                            <input type="number" id="rf-gr" value="2" step="0.1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Відстань (км)" data-en="Distance (km)">Distance (km)</label>
+                            <input type="number" id="rf-dist" value="10" step="0.1" min="0.01">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Частота (МГц)" data-en="Frequency (MHz)">Frequency (MHz)</label>
+                            <input type="number" id="rf-freq" value="915" step="1" min="1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Інші втрати (dB)" data-en="Misc Losses (dB)">Misc Losses (dB)</label>
+                            <input type="number" id="rf-lm" value="3" step="0.1">
+                        </div>
+                    </div>
+                    <button class="calc-btn" id="rf-calculate" data-ua="ОБЧИСТИТИ" data-en="CALCULATE">CALCULATE</button>
+                    <div class="calc-results" id="rf-results" style="display:none;">
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Прийнята потужність" data-en="Received Power">Received Power</span>
+                            <span class="calc-result-value" id="rf-pr">—</span>
+                        </div>
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Вільний простір втрати" data-en="Free Space Loss">Free Space Loss</span>
+                            <span class="calc-result-value" id="rf-lfs">—</span>
+                        </div>
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Запас каналу" data-en="Link Margin">Link Margin</span>
+                            <span class="calc-result-value" id="rf-margin">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-box">
+                    <div class="calc-header">>> FLIGHT_TIME</div>
+                    <div class="calc-formula">FT = (Cap × Discharge × 0.8) / Draw</div>
+                    <div class="calc-fields">
+                        <div class="calc-field">
+                            <label data-ua="Ємність акумулятора (mAh)" data-en="Battery Capacity (mAh)">Battery Capacity (mAh)</label>
+                            <input type="number" id="ft-cap" value="850" step="10" min="1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Напруга акумулятора (S)" data-en="Battery Voltage (S)">Battery Voltage (S)</label>
+                            <input type="number" id="ft-s" value="6" step="1" min="1" max="12">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="C-Rating (розряд)" data-en="C-Rating (Discharge)">C-Rating (Discharge)</label>
+                            <input type="number" id="ft-c" value="45" step="1" min="1">
+                        </div>
+                        <div class="calc-field">
+                            <label data-ua="Споживання струму (A)" data-en="Current Draw (A)">Current Draw (A)</label>
+                            <input type="number" id="ft-draw" value="30" step="0.1" min="0.1">
+                        </div>
+                    </div>
+                    <button class="calc-btn" id="ft-calculate" data-ua="ОБЧИСТИТИ" data-en="CALCULATE">CALCULATE</button>
+                    <div class="calc-results" id="ft-results" style="display:none;">
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Час польоту" data-en="Flight Time">Flight Time</span>
+                            <span class="calc-result-value" id="ft-time">—</span>
+                        </div>
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Макс. струм розряду" data-en="Max Discharge Current">Max Discharge Current</span>
+                            <span class="calc-result-value" id="ft-max-current">—</span>
+                        </div>
+                        <div class="calc-result-row">
+                            <span class="calc-result-label" data-ua="Використано ємності" data-en="Capacity Used">Capacity Used</span>
+                            <span class="calc-result-value" id="ft-cap-used">—</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
@@ -638,6 +757,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
