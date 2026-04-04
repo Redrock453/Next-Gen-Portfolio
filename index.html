@@ -747,6 +747,93 @@
         </div>
     </section>
 
+    <!-- ============================================
+         PHASE 4: VAE TRAJECTORY VISUALIZER
+         ============================================ -->
+    <section id="vae-demo" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[VAE-001]</span>
+                <h2 class="section-title">GRIM WORLD MODEL: PREDICTIVE COLLISION AVOIDANCE</h2>
+            </div>
+            <div class="vae-container">
+                <canvas id="vae-canvas" class="vae-canvas"></canvas>
+                <div class="vae-hud-overlay">
+                    <div class="hud-panel hud-top-left">
+                        <div class="hud-label">PREDICTION HORIZON</div>
+                        <div class="hud-value" id="hud-horizon">2.0s</div>
+                    </div>
+                    <div class="hud-panel hud-top-right">
+                        <div class="hud-label">COLLISION PROB</div>
+                        <div class="hud-value hud-warn" id="hud-collision">0.03%</div>
+                    </div>
+                    <div class="hud-panel hud-bottom-left">
+                        <div class="hud-label">VAE LATENT DIM</div>
+                        <div class="hud-value">64</div>
+                    </div>
+                    <div class="hud-panel hud-bottom-right">
+                        <div class="hud-label">OBSTACLE DIST</div>
+                        <div class="hud-value hud-ok" id="hud-obstacle">47.2m</div>
+                    </div>
+                    <div class="hud-center">
+                        <div class="hud-crosshair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="vae-controls">
+                <button class="vae-btn" id="vae-reset">> RESET_SIM</button>
+                <button class="vae-btn" id="vae-speed">> SPEED: 1x</button>
+                <button class="vae-btn" id="vae-toggle-cone">> CONE: ON</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PHASE 4: CHAT WIDGET (VIKA AI ASSISTANT)
+         ============================================ -->
+    <div class="chat-widget" id="chat-widget">
+        <!-- Floating toggle button -->
+        <button class="chat-toggle" id="chat-toggle" aria-label="Toggle Vika AI Assistant">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.07A7 7 0 0 1 13 22h-1v1.27a2 2 0 0 1 1 1.73 2 2 0 0 1-2 2 2 2 0 0 1-2-2c0-.74.4-1.39 1-1.73V22h-1a7 7 0 0 1-6.93-3H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2z"/>
+                <circle cx="9" cy="13" r="0.8" fill="currentColor"/>
+                <circle cx="12" cy="13" r="0.8" fill="currentColor"/>
+                <circle cx="15" cy="13" r="0.8" fill="currentColor"/>
+            </svg>
+            <span class="chat-toggle-text">VIKA</span>
+        </button>
+
+        <!-- Chat window -->
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-header-title">[VIKA_AI_ASSISTANT]</span>
+                    <span class="chat-header-status">
+                        <span class="chat-status-dot"></span>
+                        <span class="chat-status-text">DEMO MODE</span>
+                    </span>
+                </div>
+                <button class="chat-close" id="chat-close" aria-label="Close chat">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message bot">
+                    <div class="chat-msg-header">
+                        <span class="chat-msg-sender">VIKA</span>
+                        <span class="chat-msg-time">NOW</span>
+                    </div>
+                    <div class="chat-msg-body">
+                        Система Vika_OK инициализирована. Задайте вопрос или введите 'help' для списка команд.
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <span class="chat-prompt">&gt;</span>
+                <input type="text" class="chat-input" id="chat-input" placeholder="enter message..." autocomplete="off" spellcheck="false">
+                <button class="chat-send" id="chat-send" aria-label="Send message">&#9654;</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-status">
@@ -757,6 +844,8 @@
         </div>
     </footer>
 
+    <!-- Self-hosted Analytics (Plausible) — Uncomment when deploying your own instance -->
+    <!-- <script defer data-domain="portfolio.redrock453.github.io" src="https://plausible.io/js/script.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js"></script>
 </body>
