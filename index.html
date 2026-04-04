@@ -32,7 +32,10 @@
             <nav class="nav">
                 <a href="#about" class="nav-item"><span class="nav-marker">></span> INTEL</a>
                 <a href="#projects" class="nav-item"><span class="nav-marker">></span> OBJECTIVES</a>
+                <a href="#impact" class="nav-item"><span class="nav-marker">></span> IMPACT</a>
+                <a href="#timeline" class="nav-item"><span class="nav-marker">></span> TIMELINE</a>
                 <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
+                <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
                 <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
             </nav>
             <button class="hamburger" aria-label="Toggle navigation">
@@ -51,11 +54,15 @@
     <nav class="mobile-nav">
         <a href="#about" class="nav-item"><span class="nav-marker">></span> INTEL</a>
         <a href="#projects" class="nav-item"><span class="nav-marker">></span> OBJECTIVES</a>
+        <a href="#impact" class="nav-item"><span class="nav-marker">></span> IMPACT</a>
+        <a href="#timeline" class="nav-item"><span class="nav-marker">></span> TIMELINE</a>
         <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
+        <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
         <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
     </nav>
 
     <section class="hero">
+        <canvas id="particle-canvas" class="particle-canvas"></canvas>
         <div class="hero-content">
             <div class="terminal-output">
                 <div class="terminal-line"><span class="prompt">></span> <span class="typing-text" data-text="INITIATING SYSTEM CHECK..."></span></div>
@@ -127,40 +134,250 @@
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">GRIM-FPV-AI</h3></div>
-                    <p class="project-desc">Autonomous flight platform для боевого FPV 5" дрона ГРІМ-5. PID auto-tuner для ArduPilot SITL (~100 комбинаций roll/pitch/yaw, scoring function), MAVLink transport layer (ENU/NED transforms, retransmission), кастомний режим GRIM_COMBAT, 5 типів бойових місій з реалістичною телеметрією. Результат тюнінгу: roll ±8-15° → ±2-5° у вітер 10 м/с.</p>
+                    <div class="project-diagram">
+                        <pre><code>┌─────────┐    ┌───────────┐    ┌─────────┐    ┌───────┐
+│ AI/YOLO │───>│ PID Tuner │───>│ MAVLink │───>│ DRONE │
+│  v8     │    │  (SITL)   │    │  ENU/NED│    │       │
+└─────────┘    └───────────┘    └─────────┘    └───────┘
+     │                                │
+     ▼                                ▼
+┌─────────┐                    ┌───────────┐
+│OpenVINS │                    │GRIM_COMBAT│
+│  Track  │                    │  5 modes  │
+└─────────┘                    └───────────┘</code></pre>
+                    </div>
+                    <p class="project-desc">Autonomous flight platform для боевого FPV 5" дрона ГРІМ-5. PID auto-tuner для ArduPilot SITL (~100 комбинаций roll/pitch/yaw, scoring function), MAVLink transport layer (ENU/NED transforms, retransmission), кастомний режим GRIM_COMBAT, 5 типів бойових місій з реалістичною телеметрією. Результат тюніннгу: roll ±8-15° → ±2-5° у вітер 10 м/с.</p>
                     <div class="project-tech"><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>PID</span><span>PYTHON</span><span>FASTAPI</span><span>YOLOV8</span><span>OPENVINS</span></div>
                     <a href="https://github.com/Redrock453/grim-fpv-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-002]</span><h3 class="project-title">GRIM WORLD MODEL</h3></div>
+                    <div class="project-diagram">
+                        <pre><code>┌──────────┐    ┌──────────┐    ┌───────────┐
+│ Camera   │───>│ VAE      │───>│ Safety    │
+│ Input    │    │ Encoder  │    │ Metrics   │
+└──────────┘    └────┬─────┘    └───────────┘
+                     │
+              ┌──────▼──────┐
+              │ Future State│
+              │ Prediction  │
+              └─────────────┘</code></pre>
+                    </div>
                     <p class="project-desc">VAE-based predictive dynamics model для collision avoidance. Encodes visual observations, predicts future states, computes safety metrics (collision probability, obstacle distance). Jetson Orin optimized.</p>
                     <div class="project-tech"><span>PYTORCH</span><span>PYTHON</span><span>NUMPY</span><span>OPENCV</span></div>
                     <a href="https://github.com/Redrock453/grim-world-model" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-003]</span><h3 class="project-title">TACTICAL MESH</h3></div>
+                    <div class="project-diagram">
+                        <pre><code>       ┌─────────┐
+       │  ATAK   │
+       │ Console │
+       └────┬────┘
+            │ LoRa FHSS
+    ┌───────┼───────┐
+    │       │       │
+┌───┐   ┌───┐   ┌───┐
+│N1 │◄─>│N2 │◄─>│N3 │  AES-256-GCM
+│ESP│   │ESP│   │ESP│  10km+ range
+└───┘   └───┘   └───┘</code></pre>
+                    </div>
                     <p class="project-desc">Децентрализованная LoRa mesh-сеть (ESP32-S3 + SX1262) для тактической связи в условиях РЭБ. FHSS, AES-256-GCM, ATAK integration, KiCad PCB.</p>
                     <div class="project-tech"><span>C++</span><span>LORA</span><span>FHSS</span><span>ATAK</span><span>KICAD</span></div>
                     <a href="https://github.com/Redrock453/TacticalMesh" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-004]</span><h3 class="project-title">GSM SECURITY & SDR</h3></div>
+                    <div class="project-diagram">
+                        <pre><code>┌────────┐   ┌──────────┐   ┌──────────┐
+│ HackRF │──>│ GNU Radio│──>│ Anomaly  │
+│ RTL-SDR│   │  Chain   │   │ Detector │
+└────────┘   └──────────┘   └──────────┘
+     │                          │
+     ▼                          ▼
+┌──────────┐            ┌──────────────┐
+│ GMSK/TDMA│            │ Rogue BTS    │
+│ LAPDm    │            │ Alert        │
+└──────────┘            └──────────────┘</code></pre>
+                    </div>
                     <p class="project-desc">Глубокий анализ GSM протокола (L1/L2/L3, GMSK, TDMA, LAPDm). Rogue BTS detection, SDR signal chain design (HackRF, RTL-SDR), Python скрипт виявлення аномалій.</p>
                     <div class="project-tech"><span>SDR</span><span>HACKRF</span><span>PYTHON</span><span>GNU RADIO</span><span>OSMOCOM</span></div>
                     <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">TACTICAL FIBER NETWORK</h3></div>
+                    <div class="project-diagram">
+                        <pre><code>         STAR          RING          MESH
+      ┌───┬───┐    ┌───┬───┐    ┌─┬─┬─┐
+      │   │   │    │   │   │    │◄┼►│
+    ┌─┴┐ ┌┴┐ ┌┴┐  ┌┴┐  │  ┌┴┐  ├─┼─┤
+    │OP│ │OP│ │OP│  │OP├─┘  │OP│ │◄┼►│
+    └──┘ └──┘ └──┘  └──┘    └──┘ └─┴─┘
+    10km+ backbone | SFP | Media converters</code></pre>
+                    </div>
                     <p class="project-desc">Оптоволоконная EW-resistant сеть для связи операторов БПЛА. Fiber backbone (star/ring/mesh), media converters, SFP модули. BOM с ценами, калькуляторы, архитектура сети, модель набора операторов дронів.</p>
                     <div class="project-tech"><span>FIBER OPTIC</span><span>SFP</span><span>MIKROTIK</span><span>NETWORK</span><span>TOPOLOGY</span></div>
                     <a href="https://github.com/Redrock453/tactical-fiber-network" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-006]</span><h3 class="project-title">STRATEGIC INTEL AI</h3></div>
+                    <div class="project-diagram">
+                        <pre><code>┌──────────┐   ┌──────────┐   ┌──────────┐
+│ Sources  │──>│ RAG      │──>│ Multi-   │
+│ OSINT    │   │ Qdrant   │   │ Agent    │
+└──────────┘   └──────────┘   └──────────┘
+                    │                │
+              ┌─────▼─────┐   ┌─────▼─────┐
+              │ LangChain │   │ AutoGen   │
+              │ + CrewAI  │   │ + CrewAI  │
+              └───────────┘   └───────────┘</code></pre>
+                    </div>
                     <p class="project-desc">Multi-agent OSINT platform: RAG (Qdrant), LangChain + AutoGen + CrewAI, document processing.</p>
                     <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>QDRANT</span><span>LANGCHAIN</span></div>
                     <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[IMPACT-001]</span>
+                <h2 class="section-title">OPERATIONAL IMPACT</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[ROLL STABILITY]</div>
+                    <div class="metric-values">
+                        <span class="metric-before">±15°</span>
+                        <span class="metric-arrow">→</span>
+                        <span class="metric-after">±2-5°</span>
+                    </div>
+                    <div class="metric-context">[в ветер 10 м/с]</div>
+                </div>
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[MESH RANGE]</div>
+                    <div class="metric-values">
+                        <span class="metric-value">10km+</span>
+                    </div>
+                    <div class="metric-context">[в условиях РЭБ]</div>
+                </div>
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[FLIGHT TIME]</div>
+                    <div class="metric-values">
+                        <span class="metric-value">~6.4 min</span>
+                    </div>
+                    <div class="metric-context">[6S 850mAh, 865g AUW]</div>
+                </div>
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[OSINT PROCESSING]</div>
+                    <div class="metric-values">
+                        <span class="metric-before">12h</span>
+                        <span class="metric-arrow">→</span>
+                        <span class="metric-after">15min</span>
+                    </div>
+                    <div class="metric-context">[automated recon]</div>
+                </div>
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[REPOSITORIES]</div>
+                    <div class="metric-values">
+                        <span class="metric-value counter" data-target="78">0</span>
+                        <span class="metric-suffix">public</span>
+                    </div>
+                    <div class="metric-context">[GitHub]</div>
+                </div>
+                <div class="impact-metric reveal">
+                    <div class="metric-label">[LLM PROVIDERS]</div>
+                    <div class="metric-values">
+                        <span class="metric-value counter" data-target="6">0</span>
+                        <span class="metric-suffix">integrated</span>
+                    </div>
+                    <div class="metric-context">[auto-routing]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[TIMELINE-001]</span>
+                <h2 class="section-title">DEPLOYMENT LOG</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.02</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Strategic Intelligence AI</h3>
+                        <p class="timeline-desc">Архитектура multi-agent OSINT системы</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.02</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Next-Gen Portfolio</h3>
+                        <p class="timeline-desc">Запуск тактического портфолио</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.03</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">RF Anomaly Detector</h3>
+                        <p class="timeline-desc">SDR-based обнаружение аномалий GSM</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.03</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Vika_Ok v8.3</h3>
+                        <p class="timeline-desc">AI agent с multi-LLM routing</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.03</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Vika Mobile</h3>
+                        <p class="timeline-desc">Мобильная версия AI ассистента</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.03</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Tactical Fiber Network</h3>
+                        <p class="timeline-desc">Оптоволоконная сеть для операторов БПЛА</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.03</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">GRIM-FPV-AI</h3>
+                        <p class="timeline-desc">PID tuner, SITL, autonomous flight</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.04</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">GRIM World Model</h3>
+                        <p class="timeline-desc">VAE model для collision avoidance</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2026.04</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Tactical Fiber Network</h3>
+                        <p class="timeline-desc">Полная документация и BOM</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -321,6 +538,65 @@
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="status" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[STATUS-001]</span>
+                <h2 class="section-title">SYSTEM STATUS</h2>
+            </div>
+            <div class="status-grid">
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse green"></span>
+                        <span class="status-service">vika_ok</span>
+                        <span class="status-badge online">ONLINE</span>
+                    </div>
+                    <div class="status-detail">[6 LLM providers]</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse green"></span>
+                        <span class="status-service">grim-fpv-ai</span>
+                        <span class="status-badge online">DEPLOYED</span>
+                    </div>
+                    <div class="status-detail">[PID tuner v1.0]</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse green"></span>
+                        <span class="status-service">next-gen-portfolio</span>
+                        <span class="status-badge online">LIVE</span>
+                    </div>
+                    <div class="status-detail">[GitHub Pages]</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse yellow"></span>
+                        <span class="status-service">grim-world-model</span>
+                        <span class="status-badge training">TRAINING</span>
+                    </div>
+                    <div class="status-detail">[VAE model]</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse green"></span>
+                        <span class="status-service">tactical-fiber</span>
+                        <span class="status-badge online">DOCUMENTED</span>
+                    </div>
+                    <div class="status-detail">[10km mesh]</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-indicator-row">
+                        <span class="status-dot-pulse green"></span>
+                        <span class="status-service">osint-ai</span>
+                        <span class="status-badge online">ARCHITECT</span>
+                    </div>
+                    <div class="status-detail">[Multi-agent]</div>
                 </div>
             </div>
         </div>
