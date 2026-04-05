@@ -983,22 +983,6 @@ body::after {
     text-transform: uppercase;
 }
 
-.terminal-controls {
-    display: flex;
-    gap: 6px;
-}
-
-.terminal-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.red-dot { background: #ff5f56; }
-.yellow-dot { background: #ffbd2e; }
-.green-dot { background: #27c93f; }
-
 .terminal-body {
     padding: 1.5rem;
     height: 340px;
