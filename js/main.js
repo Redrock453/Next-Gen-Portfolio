@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const PARTICLE_COUNT = 80;
         const CONNECTION_DISTANCE = 150;
         const MOUSE_RADIUS = 120;
-        const PARTICLE_COLOR = '255, 159, 28';
+        const PARTICLE_COLOR = '0, 255, 65';
         const BASE_SPEED = 0.3;
 
         function resizeCanvas() {
@@ -371,5 +371,17 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
         createParticles();
         drawParticles();
+    }
+
+    // ============================================
+    // Auto-update sync date in footer
+    // ============================================
+    const syncDateEl = document.getElementById('sync-date');
+    if (syncDateEl) {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        syncDateEl.textContent = `${y}.${m}.${d}`;
     }
 });

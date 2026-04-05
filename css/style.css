@@ -1,15 +1,15 @@
 :root {
-    --bg-color: #121418;
-    --card-bg: #1A1D24;
-    --primary: #FF9F1C;
-    --primary-muted: rgba(255, 159, 28, 0.2);
-    --secondary: #4F6D55;
-    --text: #E0E0E0;
-    --text-muted: #8E949F;
-    --border: #2A2E38;
-    --green: #4CAF50;
-    --yellow: #FFC107;
-    --red: #F44336;
+    --bg-color: #0a0e0a;
+    --card-bg: #111a11;
+    --primary: #00ff41;
+    --primary-muted: rgba(0, 255, 65, 0.15);
+    --secondary: #2a4a2a;
+    --text: #c8d8c8;
+    --text-muted: #6a7a6a;
+    --border: #1a2e1a;
+    --green: #00ff41;
+    --yellow: #ffcc00;
+    --red: #ff3333;
     --font-main: 'Rajdhani', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
