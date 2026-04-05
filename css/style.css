@@ -255,7 +255,7 @@ body::after {
 
 .prompt { color: var(--primary); margin-right: 10px; }
 .highlight { color: var(--primary); font-weight: 700; }
-.amber { color: var(--primary); }
+.amber { color: var(--yellow); }
 .green { color: var(--green); }
 .cursor { animation: blink 1s infinite; color: var(--primary); }
 
