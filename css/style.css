@@ -441,13 +441,33 @@ body::after {
 }
 
 .project-link.live-demo {
-    color: var(--accent);
+    color: var(--green);
     animation: pulse-glow 2s ease-in-out infinite;
 }
 
+.project-link.pitch-deck {
+    color: #ffbf00;
+    animation: pulse-glow-amber 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-amber {
+    0%, 100% { text-shadow: 0 0 5px #ffbf00; }
+    50% { text-shadow: 0 0 15px #ffbf00, 0 0 25px #ffbf00; }
+}
+
+.demo-launch-btn.pitch-deck {
+    background: #ffbf00;
+    color: #000;
+}
+
+.demo-launch-btn.pitch-deck:hover {
+    background: #ffaa00;
+    box-shadow: 0 0 15px #ffbf00;
+}
+
 @keyframes pulse-glow {
-    0%, 100% { text-shadow: 0 0 5px var(--accent); }
-    50% { text-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent); }
+    0%, 100% { text-shadow: 0 0 5px var(--green); }
+    50% { text-shadow: 0 0 15px var(--green), 0 0 25px var(--green); }
 }
 
 /* --- DEMO ACCESS --- */
@@ -474,22 +494,27 @@ body::after {
     font-size: 0.85rem;
 }
 
+.demo-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .demo-launch-btn {
-    color: var(--accent);
+    color: var(--green);
     text-decoration: none;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     text-transform: uppercase;
     padding: 0.4rem 0.75rem;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--green);
     border-radius: 3px;
     transition: all 0.2s;
 }
 
 .demo-launch-btn:hover {
-    background: var(--accent);
-    color: var(--bg-primary);
-    box-shadow: 0 0 15px var(--accent);
+    background: var(--green);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--green);
 }
 
 .demo-frame-wrapper {
