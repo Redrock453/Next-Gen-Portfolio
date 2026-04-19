@@ -434,6 +434,79 @@ body::after {
     text-decoration: underline;
 }
 
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+.project-link.live-demo {
+    color: var(--accent);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 5px var(--accent); }
+    50% { text-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent); }
+}
+
+/* --- DEMO ACCESS --- */
+
+.demo-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.demo-title {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.demo-launch-btn {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.demo-launch-btn:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.demo-frame-wrapper {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background: var(--bg-primary);
+}
+
+.demo-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #0a0a0f;
+}
+
 /* --- IMPACT --- */
 
 .impact-grid {

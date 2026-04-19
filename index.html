@@ -37,6 +37,7 @@
                 <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
                 <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
                 <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
+                <a href="#demo-access" class="nav-item"><span class="nav-marker">></span> DEMO</a>
             </nav>
             <button class="hamburger" aria-label="Toggle navigation">
                 <span></span>
@@ -60,6 +61,7 @@
         <a href="#stack" class="nav-item"><span class="nav-marker">></span> ARSENAL</a>
         <a href="#status" class="nav-item"><span class="nav-marker">></span> STATUS</a>
         <a href="#contact" class="nav-item"><span class="nav-marker">></span> COMMS</a>
+        <a href="#demo-access" class="nav-item"><span class="nav-marker">></span> DEMO</a>
     </nav>
 
     <section class="hero">
@@ -209,7 +211,10 @@
                     </div>
                     <p class="project-desc">SpiderLink: польова система раннього виявлення + прихований зв'язок через відпрацьований оптоволоконний кабель від FPV-дронів. Zero-RF (0% emission — невидимий для РЕР), DAS/Piezo сенсори (11 типів цілей: пішохід, група, колісна/гусенична техніка, артпостріл, вибух, дрон, РЕБ, копання), ISR detection pipeline (SignalFilter → FeatureExtractor → TargetClassifier), Multi-Sensor Fusion (+0.2/-0.1 confidence), TimeCorrelator, EdgeAutonomy (confidence > 0.8 = local alert), BATMAN-adv mesh + OSPF, 75 tests passed, FastAPI C2 + WebSocket + Operator UI, Streamlit dashboard.</p>
                     <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>WEBSOCKET</span><span>STREAMLIT</span><span>BATMAN-ADV</span><span>OSPF</span><span>DAS</span><span>FFT</span><span>WIREGUARD</span><span>ISR</span></div>
-                    <a href="https://github.com/Redrock453/tactical-fiber-network" target="_blank" class="project-link">> ACCESS_REPO</a>
+                    <div class="project-links">
+                        <a href="https://github.com/Redrock453/tactical-fiber-network" target="_blank" class="project-link">> ACCESS_REPO</a>
+                        <a href="spiderlink-demo.html" target="_blank" class="project-link live-demo">> LIVE DEMO</a>
+                    </div>
                 </article>
                 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-006]</span><h3 class="project-title">STRATEGIC INTEL AI</h3></div>
@@ -228,6 +233,24 @@
                     <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>QDRANT</span><span>LANGCHAIN</span></div>
                     <a href="https://github.com/Redrock453/strategic-intelligence-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo-access" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-id">[DEMO-001]</span>
+                <h2 class="section-title">DEMO ACCESS</h2>
+            </div>
+            <div class="demo-container">
+                <div class="demo-header">
+                    <span class="demo-title">>> SPIDERLINK TFN C2 OPERATOR</span>
+                    <a href="spiderlink-demo.html" target="_blank" class="demo-launch-btn">> OPEN IN NEW TAB</a>
+                </div>
+                <div class="demo-frame-wrapper">
+                    <iframe src="spiderlink-demo.html" class="demo-frame" title="SpiderLink TFN C2 Demo" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </section>
