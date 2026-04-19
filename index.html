@@ -100,9 +100,9 @@
             </div>
             <div class="briefing-box">
                 <div class="briefing-header">>> MISSION_PROFILE</div>
-                <p class="briefing-text">Multi-domain tactical systems engineer. ArduPilot/MAVLink/SITL, PID auto-tuning, FPV & autonomous flight. GSM protocol analysis, SDR signal chains (HackRF, RTL-SDR, GNU Radio). LoRa mesh networks (ESP32-S3, FHSS, AES-256). AI/ML perception: YOLOv8, ByteTrack, OpenVINS, VAE world models, PyTorch. Multi-agent OSINT with RAG orchestration. Python, C/C++, FastAPI, TypeScript. Docker, CI/CD, systemd, Tailscale. Діючий військовослужбовець ЗСУ.</p>
+                <p class="briefing-text">Multi-domain tactical systems engineer. GRIM-5 FPV drone (T-Motor U8 Pro 2000KV, 6S 850mAh, ~865g AUW, ~4.2kg thrust). GRIM-FPV-AI platform: ArduCopter 4.5 SITL, FastAPI + WebSocket, PID auto-tuner, Multi-AI (Groq/Gemini/GLM/Grok/Claude), YOLOv8 detection, ByteTrack, OpenVINS. SpiderLink TFN: fiber optic ISR network using spent FPV cables, DAS/Piezo sensors (11 target types), BATMAN-adv mesh, OSPF routing, EdgeAutonomy, Streamlit dashboard. Python, FastAPI, PyTorch, Docker. Active Ukrainian Armed Forces.</p>
                 <div class="briefing-tags">
-                    <span class="tag">[ARDUPILOT]</span> <span class="tag">[SITL]</span> <span class="tag">[PID]</span> <span class="tag">[MAVLINK]</span> <span class="tag">[SDR]</span> <span class="tag">[GSM]</span> <span class="tag">[HACKRF]</span> <span class="tag">[LORA]</span> <span class="tag">[ESP32]</span> <span class="tag">[FHSS]</span> <span class="tag">[AES-256]</span> <span class="tag">[AI/ML]</span> <span class="tag">[YOLOV8]</span> <span class="tag">[PYTORCH]</span> <span class="tag">[VAE]</span> <span class="tag">[OSINT]</span> <span class="tag">[RAG]</span> <span class="tag">[PYTHON]</span> <span class="tag">[C/C++]</span> <span class="tag">[FASTAPI]</span> <span class="tag">[DOCKER]</span> <span class="tag">[TAILSCALE]</span> <span class="tag">[COMBAT SYSTEMS]</span>
+                    <span class="tag">[GRIM-5]</span> <span class="tag">[T-MOTOR]</span> <span class="tag">[6S LIPO]</span> <span class="tag">[ARDUCOPTER]</span> <span class="tag">[SITL]</span> <span class="tag">[PID TUNING]</span> <span class="tag">[MAVLINK]</span> <span class="tag">[FASTAPI]</span> <span class="tag">[YOLOV8]</span> <span class="tag">[BYTETRACK]</span> <span class="tag">[OPENVINS]</span> <span class="tag">[DAS]</span> <span class="tag">[PIEZO]</span> <span class="tag">[BATMAN-ADV]</span> <span class="tag">[OSPF]</span> <span class="tag">[SPIDERLINK]</span> <span class="tag">[STREAMLIT]</span> <span class="tag">[PYTHON]</span> <span class="tag">[PYTORCH]</span> <span class="tag">[DOCKER]</span> <span class="tag">[ISR]</span> <span class="tag">[EW]</span>
                 </div>
             </div>
         </div>
@@ -118,24 +118,25 @@
 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">GRIM-FPV-AI</h3></div>
                     <div class="project-diagram">
-                        <pre><code>┌──────────────┐   TCP5760   ┌─────────────┐   ┌──────────┐
-│  ArduPilot   │───────────>│  FastAPI   │──>│ Browser   │
-│  SITL       │<───────────│  Server   │   │ Dashboard │
-│  Copter 4.5 │  MAVLink   │  Python   │   │ QGround   │
-└──────┬──────┘            └─────┬─────┘   └────┬─────┘
-       │                    WebSocket│              │
-  UDP14550          ┌──────────────▼───────────┐
-       │          │ Multi-AI: Groq|Gemini|GLM│
-       │          │ Grok|Claude|OpenVINS|YOLO│
-┌──────▼─────┐   └───────────────────────┬─────┘
-│ QGroundCtrl│                     │
-│  Android │               ┌───────▼──────┐
-└──────────┘               │ Calculations │
-                           │ PID|RF|Therm│
-                           └─────────────┘</code></pre>
+                        <pre><code>┌─────────────┐   TCP 5760   ┌──────────────┐   ┌──────────┐
+│  ArduPilot  │ ───────────►│   FastAPI    │──>│  Browser   │
+│  SITL       │ ◄───────────│   Server     │   │ Dashboard │
+│  (Copter)   │  MAVLink    │   (Python)   │   │ Leaflet   │
+└──────┬──────┘              └──────┬───────┘   │ Chart.js  │
+       │                     WebSocket│         └────┬─────┘
+   UDP │ 14550               ┌───────▼───────┐
+       │              Multi-AI: Groq|Gemini │
+       │              GLM-5.1|grok-2|Claude│
+ ┌─────▼─────┐          └────────────────┘
+ │ QGroundCtrl│              API Endpoints:  │
+ │ (Android) │          /calculate/flight │
+ │ :14550   │          /hover-current    │
+ └──────────┘          /rf-link|thermal   │
+                      /multi-ai|PID      │
+                      /missions/start   </code></pre>
                     </div>
-                    <p class="project-desc">AI-платформа для бойових FPV-дронів ГРІМ-5. Повний стек: SITL ArduPilot 4.5, PID auto-tuner (±8-15°→±2-5° у вітер 10м/с), MAVLink, FastAPI + WebSocket дашборд, YOLOv8 детекція, ByteTrack, OpenVINS, Multi-AI інтеграція (Groq/Gemini/GLM/Grok/Claude). Калькулятори: flight time, RF link, thermal, range, PID.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>PYTORCH</span><span>OPENCV</span><span>YOLOV8</span><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>FASTAPI</span><span>DOCKER</span></div>
+                    <p class="project-desc">AI-платформа для бойового FPV-дрона ГРІМ-5 (iFlight XL5 Pro 5", T-Motor U8 Pro 2000KV, 6S 850mAh 75C, ~865g AUW, ~4.2kg thrust). SITL ArduCopter 4.5, FastAPI + WebSocket/Web Dashboard (Leaflet.js + Chart.js), MAVLink телеметрія, PID auto-tuner (Rate P: 0.135, Rate I: 0.018, Rate D: 0.0045), YOLOv8 + ByteTrack, OpenVINS SLAM, Multi-AI (Groq llama-3.3-70b, Gemini-2.0-flash, GLM-5.1, grok-2, Claude Sonnet). Docker VPS deploy (2CPU/8GB).</p>
+                    <div class="project-tech"><span>PYTHON</span><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>FASTAPI</span><span>WEBSOCKET</span><span>LEAFLET</span><span>CHART.JS</span><span>DOCKER</span><span>YOLOV8</span><span>BYTETRACK</span><span>OPENVINS</span></div>
                     <a href="https://github.com/Redrock453/grim-fpv-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
@@ -195,20 +196,19 @@
 <article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">SPIDERLINK TFN</h3></div>
                     <div class="project-diagram">
-                        <pre><code>┌─────────┐    ┌──────────┐    ┌─────────┐    ┌───────┐
-│  DAS    │───>│ Edge     │───>│ Fiber   │───>│  C2   │
-│ Sensor  │    │ Node     │    │ Mesh    │    │Server │
-│ (piezo) │    │ (classif)│    │BATMAN   │    │FastAPI│
-└─────────┘    └──────────┘    └─────────┘    └───────┘
-      │                                        │
-      ▼                                  ┌─────▼─────┐
-┌──────────┐                              │ Operator   │
-│ 11 types │  Zero-RF: 0% emission        │ UI (HTML)  │
-│ targets  │  <1ms/km latency            │ + WebSocket│
-└──────────┘  $0 cable (spent FPV)      └───────────┘</code></pre>
+                        <pre><code> Sensor    Edge Node     Fiber Mesh      C2      Operator
+────────   ────────    ──────────   ──────    ─────────
+  piezo  ───>classif──>BATMAN-adv──>FastAPI──>  Browser
+ DAS    SNR+FFT    WireGuard    WebSocket    Strike
+(11 types)               OSPF           │  Action
+                  ring+cross-links    ┌────▼─────┐
+             P_break: 82mm(15m)       │  Target  │
+             152mm(30m) RSZV(50m)     │  Sector │
+                                    │    +    │
+                                    │  Type   </code></pre>
                     </div>
-                    <p class="project-desc">SpiderLink: польова система раннього виявлення + прихований зв'язок через відпрацьований оптоволоконний кабель від FPV-дронів. Zero-RF (невидимий для РЕР), DAS/п'єзо сенсори (11 типів цілей: піхота, техніка, артилерія, дрони), BATMAN-adv mesh, OSPF routing, EdgeAutonomy, FastAPI C2 + Operator UI, Streamlit дашборд.</p>
-                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>STREAMLIT</span><span>BATMAN-ADV</span><span>DAS</span><span>WIREGUARD</span><span>FFT</span></div>
+                    <p class="project-desc">SpiderLink: польова система раннього виявлення + прихований зв'язок через відпрацьований оптоволоконний кабель від FPV-дронів. Zero-RF (0% emission — невидимий для РЕР), DAS/Piezo сенсори (11 типів цілей: пішохід, група, колісна/гусенична техніка, артпостріл, вибух, дрон, РЕБ, копання), ISR detection pipeline (SignalFilter → FeatureExtractor → TargetClassifier), Multi-Sensor Fusion (+0.2/-0.1 confidence), TimeCorrelator, EdgeAutonomy (confidence > 0.8 = local alert), BATMAN-adv mesh + OSPF, 75 tests passed, FastAPI C2 + WebSocket + Operator UI, Streamlit dashboard.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>WEBSOCKET</span><span>STREAMLIT</span><span>BATMAN-ADV</span><span>OSPF</span><span>DAS</span><span>FFT</span><span>WIREGUARD</span><span>ISR</span></div>
                     <a href="https://github.com/Redrock453/tactical-fiber-network" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
@@ -242,50 +242,50 @@
                 <div class="impact-metric reveal">
                     <div class="metric-label">[ROLL STABILITY]</div>
                     <div class="metric-values">
-                        <span class="metric-before">±15°</span>
+                        <span class="metric-before">±8-15°</span>
                         <span class="metric-arrow">→</span>
                         <span class="metric-after">±2-5°</span>
                     </div>
-                    <div class="metric-context">[у вітер 10 м/с]</div>
+                    <div class="metric-context">[вітер 8-12 м/с, PID tuned]</div>
                 </div>
                 <div class="impact-metric reveal">
-                    <div class="metric-label">[MESH RANGE]</div>
+                    <div class="metric-label">[ZERO-RF]</div>
                     <div class="metric-values">
-                        <span class="metric-value">10km+</span>
+                        <span class="metric-value">0%</span>
+                        <span class="metric-suffix">emission</span>
                     </div>
-                    <div class="metric-context">[в умовах РЕБ]</div>
+                    <div class="metric-context">[invisible to RER]</div>
                 </div>
                 <div class="impact-metric reveal">
-                    <div class="metric-label">[FLIGHT TIME]</div>
+                    <div class="metric-label">[DETECTION LATENCY]</div>
                     <div class="metric-values">
-                        <span class="metric-value">~6.4 min</span>
+                        <span class="metric-value">&lt;500ms</span>
                     </div>
-                    <div class="metric-context">[6S 850mAh, 865g AUW]</div>
+                    <div class="metric-context">[sensor → operator]</div>
                 </div>
                 <div class="impact-metric reveal">
-                    <div class="metric-label">[OSINT PROCESSING]</div>
+                    <div class="metric-label">[TARGET TYPES]</div>
                     <div class="metric-values">
-                        <span class="metric-before">12h</span>
-                        <span class="metric-arrow">→</span>
-                        <span class="metric-after">15min</span>
+                        <span class="metric-value">11</span>
+                        <span class="metric-suffix">types</span>
                     </div>
-                    <div class="metric-context">[automated recon]</div>
+                    <div class="metric-context">[DAS: infantry, vehicles, arty, drones]</div>
                 </div>
                 <div class="impact-metric reveal">
-                    <div class="metric-label">[REPOSITORIES]</div>
+                    <div class="metric-label">[TESTS PASSED]</div>
                     <div class="metric-values">
-                        <span class="metric-value counter" data-target="78">0</span>
-                        <span class="metric-suffix">public</span>
+                        <span class="metric-value counter" data-target="75">0</span>
+                        <span class="metric-suffix">/ 75</span>
                     </div>
-                    <div class="metric-context">[GitHub]</div>
+                    <div class="metric-context">[TFN test suite]</div>
                 </div>
                 <div class="impact-metric reveal">
-                    <div class="metric-label">[LLM PROVIDERS]</div>
+                    <div class="metric-label">[AI PROVIDERS]</div>
                     <div class="metric-values">
-                        <span class="metric-value counter" data-target="6">0</span>
+                        <span class="metric-value counter" data-target="5">0</span>
                         <span class="metric-suffix">integrated</span>
                     </div>
-                    <div class="metric-context">[auto-routing]</div>
+                    <div class="metric-context">[Groq|Gemini|GLM|grok|Claude]</div>
                 </div>
             </div>
         </div>
@@ -387,7 +387,7 @@
                         <span class="module-name">FLIGHT SYSTEMS</span>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">ArduPilot</span>
+                        <span class="item-name">ArduCopter 4.5</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span>
                         </div>
@@ -408,6 +408,12 @@
                         <span class="item-name">MAVLink</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">QGroundControl</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                 </div>
@@ -435,7 +441,7 @@
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">PyTorch / VAE</span>
+                        <span class="item-name">Groq/Gemini/GLM</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
@@ -444,30 +450,30 @@
                 <div class="stack-module">
                     <div class="module-header">
                         <span class="module-id">[MOD-003]</span>
-                        <span class="module-name">RF / COMMS</span>
+                        <span class="module-name">ISR / FIBER</span>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">SDR</span>
-                        <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                        </div>
-                    </div>
-                    <div class="module-item">
-                        <span class="item-name">LoRa</span>
+                        <span class="item-name">DAS / Piezo</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">FHSS</span>
+                        <span class="item-name">FFT Analysis</span>
                         <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">GSM Analysis</span>
+                        <span class="item-name">BATMAN-adv</span>
                         <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">OSPF Routing</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                 </div>
@@ -483,21 +489,21 @@
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">C/C++</span>
-                        <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                        </div>
-                    </div>
-                    <div class="module-item">
                         <span class="item-name">FastAPI</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">TypeScript</span>
+                        <span class="item-name">WebSocket</span>
                         <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">Streamlit</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                 </div>
@@ -513,21 +519,21 @@
                         </div>
                     </div>
                     <div class="module-item">
-                        <span class="item-name">CI/CD</span>
+                        <span class="item-name">WireGuard</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">pytest</span>
+                        <div class="item-bars">
+                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <span class="item-name">VPS Ubuntu</span>
                         <div class="item-bars">
                             <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                        </div>
-                    </div>
-                    <div class="module-item">
-                        <span class="item-name">systemd</span>
-                        <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                        </div>
-                    </div>
-                    <div class="module-item">
-                        <span class="item-name">Tailscale</span>
-                        <div class="item-bars">
-                            <span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar filled"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
                         </div>
                     </div>
                 </div>
