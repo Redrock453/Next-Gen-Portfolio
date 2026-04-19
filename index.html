@@ -115,22 +115,27 @@
                 <h2 class="section-title">MISSION LOG</h2>
             </div>
             <div class="projects-grid">
-                <article class="project-card">
+<article class="project-card">
                     <div class="project-header"><span class="project-id">[OBJ-001]</span><h3 class="project-title">GRIM-FPV-AI</h3></div>
                     <div class="project-diagram">
-                        <pre><code>┌─────────┐    ┌───────────┐    ┌─────────┐    ┌───────┐
-│ AI/YOLO │───>│ PID Tuner │───>│ MAVLink │───>│ DRONE │
-│  v8     │    │  (SITL)   │    │  ENU/NED│    │       │
-└─────────┘    └───────────┘    └─────────┘    └───────┘
-     │                                │
-     ▼                                ▼
-┌─────────┐                    ┌───────────┐
-│OpenVINS │                    │GRIM_COMBAT│
-│  Track  │                    │  5 modes  │
-└─────────┘                    └───────────┘</code></pre>
+                        <pre><code>┌──────────────┐   TCP5760   ┌─────────────┐   ┌──────────┐
+│  ArduPilot   │───────────>│  FastAPI   │──>│ Browser   │
+│  SITL       │<───────────│  Server   │   │ Dashboard │
+│  Copter 4.5 │  MAVLink   │  Python   │   │ QGround   │
+└──────┬──────┘            └─────┬─────┘   └────┬─────┘
+       │                    WebSocket│              │
+  UDP14550          ┌──────────────▼───────────┐
+       │          │ Multi-AI: Groq|Gemini|GLM│
+       │          │ Grok|Claude|OpenVINS|YOLO│
+┌──────▼─────┐   └───────────────────────┬─────┘
+│ QGroundCtrl│                     │
+│  Android │               ┌───────▼──────┐
+└──────────┘               │ Calculations │
+                           │ PID|RF|Therm│
+                           └─────────────┘</code></pre>
                     </div>
-                    <p class="project-desc">Autonomous flight platform for combat FPV 5" drone GRIM-5. PID auto-tuner for ArduPilot SITL (~100 roll/pitch/yaw combinations, scoring function), MAVLink transport layer (ENU/NED transforms, retransmission), custom GRIM_COMBAT mode, 5 types of combat missions with realistic telemetry. Tuning result: roll ±8-15° → ±2-5° in 10 m/s wind.</p>
-                    <div class="project-tech"><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>PID</span><span>PYTHON</span><span>FASTAPI</span><span>YOLOV8</span><span>OPENVINS</span></div>
+                    <p class="project-desc">AI-платформа для бойових FPV-дронів ГРІМ-5. Повний стек: SITL ArduPilot 4.5, PID auto-tuner (±8-15°→±2-5° у вітер 10м/с), MAVLink, FastAPI + WebSocket дашборд, YOLOv8 детекція, ByteTrack, OpenVINS, Multi-AI інтеграція (Groq/Gemini/GLM/Grok/Claude). Калькулятори: flight time, RF link, thermal, range, PID.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>PYTORCH</span><span>OPENCV</span><span>YOLOV8</span><span>ARDUPILOT</span><span>SITL</span><span>MAVLINK</span><span>FASTAPI</span><span>DOCKER</span></div>
                     <a href="https://github.com/Redrock453/grim-fpv-ai" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
@@ -187,19 +192,23 @@
                     <div class="project-tech"><span>SDR</span><span>HACKRF</span><span>PYTHON</span><span>GNU RADIO</span><span>OSMOCOM</span></div>
                     <a href="https://github.com/Redrock453/gsm-fake-points-guide" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
-                <article class="project-card">
-                    <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">TACTICAL FIBER NETWORK</h3></div>
+<article class="project-card">
+                    <div class="project-header"><span class="project-id">[OBJ-005]</span><h3 class="project-title">SPIDERLINK TFN</h3></div>
                     <div class="project-diagram">
-                        <pre><code>         STAR          RING          MESH
-      ┌───┬───┐    ┌───┬───┐    ┌─┬─┬─┐
-      │   │   │    │   │   │    │◄┼►│
-    ┌─┴┐ ┌┴┐ ┌┴┐  ┌┴┐  │  ┌┴┐  ├─┼─┤
-    │OP│ │OP│ │OP│  │OP├─┘  │OP│ │◄┼►│
-    └──┘ └──┘ └──┘  └──┘    └──┘ └─┴─┘
-    10km+ backbone | SFP | Media converters</code></pre>
+                        <pre><code>┌─────────┐    ┌──────────┐    ┌─────────┐    ┌───────┐
+│  DAS    │───>│ Edge     │───>│ Fiber   │───>│  C2   │
+│ Sensor  │    │ Node     │    │ Mesh    │    │Server │
+│ (piezo) │    │ (classif)│    │BATMAN   │    │FastAPI│
+└─────────┘    └──────────┘    └─────────┘    └───────┘
+      │                                        │
+      ▼                                  ┌─────▼─────┐
+┌──────────┐                              │ Operator   │
+│ 11 types │  Zero-RF: 0% emission        │ UI (HTML)  │
+│ targets  │  <1ms/km latency            │ + WebSocket│
+└──────────┘  $0 cable (spent FPV)      └───────────┘</code></pre>
                     </div>
-                    <p class="project-desc">EW-resistant оптоволоконна мережа для зв'язку операторів БПЛА. Fiber backbone (star/ring/mesh), media converters, SFP модулі. BOM з цінами, калькулятори, архітектура мережі, модель набору операторів дронів.</p>
-                    <div class="project-tech"><span>FIBER OPTIC</span><span>SFP</span><span>MIKROTIK</span><span>NETWORK</span><span>TOPOLOGY</span></div>
+                    <p class="project-desc">SpiderLink: польова система раннього виявлення + прихований зв'язок через відпрацьований оптоволоконний кабель від FPV-дронів. Zero-RF (невидимий для РЕР), DAS/п'єзо сенсори (11 типів цілей: піхота, техніка, артилерія, дрони), BATMAN-adv mesh, OSPF routing, EdgeAutonomy, FastAPI C2 + Operator UI, Streamlit дашборд.</p>
+                    <div class="project-tech"><span>PYTHON</span><span>FASTAPI</span><span>STREAMLIT</span><span>BATMAN-ADV</span><span>DAS</span><span>WIREGUARD</span><span>FFT</span></div>
                     <a href="https://github.com/Redrock453/tactical-fiber-network" target="_blank" class="project-link">> ACCESS_REPO</a>
                 </article>
                 <article class="project-card">
